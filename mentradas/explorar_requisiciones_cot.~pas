@@ -1,0 +1,58 @@
+unit explorar_requisiciones_cot;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  explorarMDI, Db, dxTL, dxDBCtrl, dxDBGrid, Menus, XPMenu, dxPSCore,
+  IBCustomDataSet, IBQuery, Mensajes, StdCtrls, AHMTButton, dxCntner,
+  dxEditor, dxEdLib, fcLabel, Mask, DBCtrls, fcStatusBar, fcButton,
+  fcImgBtn, JvComponent, JvArrowBtn, jpeg, fcImager, ExtCtrls, FashionPanel,
+  fcShapeBtn, dxExEdtr, ComCtrls, Grids, DBGrids, Buttons;
+
+type
+  TfrmExplorar_requisicion_cotizaciones = class(TfrmExplorarMDI)
+    dgExplorarCLAVE: TdxDBGridColumn;
+    dgExplorarDEPARTAMENTO: TdxDBGridColumn;
+    dgExplorarFECHA_ENTREGA: TdxDBGridColumn;
+    dgExplorarNOMBRE: TdxDBGridColumn;
+    dgExplorarRAZON_SOCIAL: TdxDBGridColumn;
+    dgExplorarFECHA_VALIDEZ: TdxDBGridColumn;
+    qyExplorarR_ID: TIntegerField;
+    qyExplorarR_CLAVE: TIBStringField;
+    qyExplorarR_DEPARTAMENTO: TIBStringField;
+    qyExplorarR_FECHA_ENTREGA: TDateTimeField;
+    qyExplorarR_NOMBRE: TIBStringField;
+    qyExplorarR_RAZON_SOCIAL: TIBStringField;
+    qyExplorarR_FECHA_VALIDEZ: TDateTimeField;
+    dgExplorarID: TdxDBGridColumn;
+    qyExplorarCOMPRA_MINIMA: TFloatField;
+    qyExplorarDESCUENTO_PORC: TFloatField;
+    dgExplorarCOMPRA_MINIMA: TdxDBGridColumn;
+    dgExplorarDESCUENTO_PORC: TdxDBGridColumn;
+    qyExplorarR_FECHA: TDateTimeField;
+    dgExplorarFECHA_ALTA: TdxDBGridColumn;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmExplorar_requisicion_cotizaciones: TfrmExplorar_requisicion_cotizaciones;
+
+implementation
+
+{$R *.DFM}
+
+procedure TfrmExplorar_requisicion_cotizaciones.FormCreate(
+  Sender: TObject);
+begin
+  inherited;
+  EXP_NVO     := true;
+  CAMPO_FECHA := 'R_FECHA';
+  FForma      := 'frmCapturar_requisicion_cotizaciones';
+end;
+
+end.

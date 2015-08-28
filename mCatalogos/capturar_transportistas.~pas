@@ -1,0 +1,34 @@
+unit capturar_transportistas;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  capturar_base_sujetos, ImgList, dxLayout, Db, IBStoredProc, IBTable,
+  Mensajes, IBCustomDataSet, IBQuery, dxExEdtr, dxExGrEd, dxExELib,
+  dxEdLib, dxDBELib, dxDBTLCl, dxGrClms, dxTL, dxDBCtrl, dxDBGrid,
+  dxCntner, dxEditor, StdCtrls, ComCtrls, FoldPanel, DBCtrls, Mask,
+  fcStatusBar, fcButton, fcImgBtn, jpeg, fcImager, ExtCtrls, FashionPanel,
+  Menus, ExtDlgs, XPMenu, InputData, Buttons, JvLabel, JvHotLink,
+  LMDCustomButton, LMDDockButton, JvLookup, Grids, DBGrids;
+
+type
+  TfrmCapturar_transportistas = class(TfrmCapturar_base_sujetos)
+    TCapturarID: TIntegerField;
+    TCapturarSUJETO: TIntegerField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCapturar_transportistas: TfrmCapturar_transportistas;
+
+implementation
+
+uses explorar_transportistas, IBModulo;
+
+{$R *.DFM}
+
+end.

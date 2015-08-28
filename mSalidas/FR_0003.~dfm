@@ -1,0 +1,1710 @@
+object frmFR_0003: TfrmFR_0003
+  Left = 764
+  Top = 205
+  Width = 256
+  Height = 244
+  Caption = 'FR_0003'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object frxReport1: TfrxReport
+    Version = '4.13.1'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 39106.4911610301
+    ReportOptions.Description.Strings = (
+      'Cotizacion'
+      ''
+      ''
+      'StoreProc: COTIZACION_ENCABEZADO(:P_ID, :P_LETRAS)'
+      '                  COTIZACION_PARTIDAS(:P_ID)')
+    ReportOptions.LastChange = 39133.7319383565
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'var'
+      '   vColor : boolean;'
+      '   vAncho : double;                                             '
+      ''
+      ''
+      'procedure MasterData1OnAfterPrint(Sender: TfrxComponent);'
+      'begin'
+      '   shDetalle.Visible := vColor;'
+      '   vColor := not(vColor);  '
+      'end;'
+      ''
+      'procedure MasterData1OnBeforePrint(Sender: TfrxComponent);'
+      'begin'
+      '   Rich1.Visible                                 := false;'
+      '   frDetCotizacionR_ROWS.Visible                 := true;  '
+      '   frDetCotizacionR_CANTIDAD.Visible             := true;'
+      '   frDetCotizacionR_CLAVE.Visible                := true;'
+      '   frDetCotizacionR_DESCRIPCION.Visible          := true;'
+      '   frDetCotizacionR_DESCRIPCION_UNIDAD.Visible   := true;'
+      '   frDetCotizacionR_PRECIO_SIN_IMPUESTOS.Visible := true;'
+      '   frDetCotizacionR_SUBTOTAL.Visible             := true;'
+      '   Line1.Visible                                 := true;'
+      '   Line2.Visible                                 := true;'
+      '   Line4.Visible                                 := true;       '
+      '   Line5.Visible                                 := true;'
+      '   Line6.Visible                                 := true;'
+      '   Line7.Visible                                 := true;'
+      '       '
+      '   MasterData1.Height := vAncho;                     '
+      '   if <frDetCotizacion."R_ID"> = 0 then'
+      '   begin'
+      
+        '      shDetalle.Visible  := false;                              ' +
+        '  '
+      
+        '      vColor             := true;                               ' +
+        '                                                                ' +
+        '                                                                ' +
+        '                 '
+      '      Rich1.Visible      := true;'
+      '      Rich1.Top          := 0;'
+      '      MasterData1.Height := Rich1.Height;  '
+      '        '
+      
+        '      frDetCotizacionR_CANTIDAD.Visible             := false;   ' +
+        '      '
+      '      frDetCotizacionR_CLAVE.Visible                := false;'
+      '      frDetCotizacionR_DESCRIPCION.Visible          := false;'
+      '      frDetCotizacionR_DESCRIPCION_UNIDAD.Visible   := false;'
+      '      frDetCotizacionR_PRECIO_SIN_IMPUESTOS.Visible := false;'
+      '      frDetCotizacionR_SUBTOTAL.Visible             := false;'
+      '      Line1.Visible                                 := false;'
+      '      Line2.Visible                                 := false;'
+      
+        '      Line4.Visible                                 := false;   ' +
+        '       '
+      '      Line5.Visible                                 := false;'
+      '      Line6.Visible                                 := false;'
+      
+        '      Line7.Visible                                 := false;   ' +
+        '       '
+      '   end                   '
+      'end;'
+      ''
+      'procedure Rich1OnAfterPrint(Sender: TfrxComponent);'
+      'begin'
+      '  Line14.Visible := false;                '
+      '  if not(vColor) then'
+      '     Line14.Visible := true;                        '
+      'end;'
+      ''
+      'begin'
+      
+        '   vAncho := shDetalle.Height;                                  ' +
+        '                                                                ' +
+        '                   '
+      'end.  ')
+    Left = 24
+    Top = 16
+    Datasets = <
+      item
+      end
+      item
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000
+      Width = 1000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 215.9
+      PaperHeight = 279.4
+      PaperSize = 1
+      object PageHeader1: TfrxPageHeader
+        Height = 128.50402
+        Top = 18.89765
+        Width = 816.000527
+        object Shape2: TfrxShapeView
+          Left = 11.55906
+          Top = 13.55906
+          Width = 472.44125
+          Height = 75.5906
+          ShowHint = False
+          Frame.Color = 15000804
+          Shape = skRoundRectangle
+        end
+        object Shape1: TfrxShapeView
+          Left = 485.88976622
+          Top = 13.55906
+          Width = 311.81102362
+          Height = 75.5906
+          ShowHint = False
+          Frame.Color = 15000804
+          Shape = skRoundRectangle
+        end
+        object Memo1: TfrxMemoView
+          Align = baCenter
+          Left = 7.37008350000002
+          Top = 94.69295
+          Width = 801.26036
+          Height = 30.23624
+          ShowHint = False
+          Color = clSilver
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'COTIZACION')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo16: TfrxMemoView
+          Left = 19.55906
+          Top = 14.77953
+          Width = 71.81107
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Impresion:')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo17: TfrxMemoView
+          Left = 167.84261
+          Top = 14.77953
+          Width = 120.94496
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = 'mmmm dd, yyyy'
+          DisplayFormat.Kind = fkDateTime
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[Date]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo18: TfrxMemoView
+          Left = 19.55906
+          Top = 39.91427889
+          Width = 64.25201
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Empresa:')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo20: TfrxMemoView
+          Left = 100.70872
+          Top = 14.77953
+          Width = 64.25201
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = 'hh:mm am/pm'
+          DisplayFormat.Kind = fkDateTime
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[Time],')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frMI_EncabezadoR_ESTATUS: TfrxMemoView
+          Left = 500.69326
+          Top = 67.84518667
+          Width = 56.69295
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Estatus:')
+          ParentFont = False
+          VAlign = vaBottom
+        end
+        object Memo22: TfrxMemoView
+          Left = 500.69326
+          Top = 11.77953
+          Width = 56.69295
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Folio')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaBottom
+        end
+        object Memo23: TfrxMemoView
+          Left = 500.69326
+          Top = 48.48996778
+          Width = 56.69295
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Clave:')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaBottom
+        end
+        object frMI_EncabezadoR_FECHA_ALTA: TfrxMemoView
+          Left = 500.69326
+          Top = 30.13474889
+          Width = 56.69295
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = 'hh:mm am/pm, mmmm dd, yyyy'
+          DisplayFormat.Kind = fkDateTime
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Fecha:')
+          ParentFont = False
+          VAlign = vaBottom
+        end
+        object Memo24: TfrxMemoView
+          Left = 19.55906
+          Top = 65.04902778
+          Width = 79.37013
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Telefono(s):')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_CONSECUTIVO: TfrxMemoView
+          Left = 563.14997
+          Top = 11.77953
+          Width = 79.37013
+          Height = 18.89765
+          ShowHint = False
+          DataField = 'R_CONSECUTIVO'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_CONSECUTIVO"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaBottom
+        end
+        object frEncCotizacionR_FECHA_ALTA: TfrxMemoView
+          Left = 563.14997
+          Top = 30.13474889
+          Width = 200.31509
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = 'hh:mm am/pm, mmmm dd, yyyy'
+          DisplayFormat.Kind = fkDateTime
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_FECHA_ALTA"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaBottom
+        end
+        object frEncCotizacionR_CLAVE: TfrxMemoView
+          Left = 563.14997
+          Top = 48.48996778
+          Width = 158.74026
+          Height = 18.89765
+          ShowHint = False
+          DataField = 'R_CLAVE'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_CLAVE"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaBottom
+        end
+        object frEncCotizacionR_ESTATUS: TfrxMemoView
+          Left = 563.14997
+          Top = 67.84518667
+          Width = 158.74026
+          Height = 18.89765
+          ShowHint = False
+          DataField = 'R_ESTATUS'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_ESTATUS"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaBottom
+        end
+        object Memo25: TfrxMemoView
+          Left = 293.37817
+          Top = 14.77953
+          Width = 60.47248
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Vigencia')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_FECHA_VALIDEZ: TfrxMemoView
+          Left = 357.71676
+          Top = 14.77953
+          Width = 120.94496
+          Height = 18.89765
+          ShowHint = False
+          DataField = 'R_FECHA_VALIDEZ'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_FECHA_VALIDEZ"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_EMPRESA_NOMBRE: TfrxMemoView
+          Left = 100.70872
+          Top = 39.91427889
+          Width = 377.953
+          Height = 18.89765
+          ShowHint = False
+          DataField = 'R_EMPRESA_NOMBRE'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_EMPRESA_NOMBRE"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_EMPRESA_TELEFONO1: TfrxMemoView
+          Left = 100.70872
+          Top = 65.04902778
+          Width = 102.04731
+          Height = 18.89765
+          ShowHint = False
+          DataField = 'R_EMPRESA_TELEFONO1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_EMPRESA_TELEFONO1"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_EMPRESA_TELEFONO2: TfrxMemoView
+          Left = 207.87415
+          Top = 65.04902778
+          Width = 102.04731
+          Height = 18.89765
+          ShowHint = False
+          DataField = 'R_EMPRESA_TELEFONO2'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_EMPRESA_TELEFONO2"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+      end
+      object MasterData1: TfrxMasterData
+        Height = 86.92919
+        Top = 332.59864
+        Width = 816.000527
+        OnAfterPrint = 'MasterData1OnAfterPrint'
+        OnBeforePrint = 'MasterData1OnBeforePrint'
+        RowCount = 0
+        object shDetalle: TfrxShapeView
+          Left = 11.33859
+          Width = 782.36219984
+          Height = 15.87401575
+          ShowHint = False
+          Color = 15790320
+          Frame.Color = 15000804
+          Shape = skRoundRectangle
+        end
+        object frDetCotizacionR_ROWS: TfrxMemoView
+          Left = 13.33859
+          Width = 41.57483
+          Height = 15.87401575
+          ShowHint = False
+          DataField = 'R_ROWS'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frDetCotizacion."R_ROWS"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frDetCotizacionR_CANTIDAD: TfrxMemoView
+          Left = 59.44882134
+          Width = 79.37013
+          Height = 15.87401575
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frDetCotizacion."R_CANTIDAD"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frDetCotizacionR_CLAVE: TfrxMemoView
+          Left = 146.62201795
+          Width = 94.48825
+          Height = 15.87401575
+          ShowHint = False
+          DataField = 'R_CLAVE'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frDetCotizacion."R_CLAVE"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frDetCotizacionR_DESCRIPCION: TfrxMemoView
+          Left = 247.80334
+          Width = 287.24428
+          Height = 15.87401575
+          ShowHint = False
+          DataField = 'R_DESCRIPCION'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frDetCotizacion."R_DESCRIPCION"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frDetCotizacionR_DESCRIPCION_UNIDAD: TfrxMemoView
+          Left = 540.76407
+          Width = 52.91342
+          Height = 15.87401575
+          ShowHint = False
+          DataField = 'R_DESCRIPCION_UNIDAD'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frDetCotizacion."R_DESCRIPCION_UNIDAD"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frDetCotizacionR_PRECIO_SIN_IMPUESTOS: TfrxMemoView
+          Left = 601.82715
+          Width = 90.70872
+          Height = 15.87401575
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = '%2.2m'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[frDetCotizacion."R_PRECIO_SIN_IMPUESTOS"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frDetCotizacionR_SUBTOTAL: TfrxMemoView
+          Left = 702.21305
+          Width = 90.70872
+          Height = 15.87401575
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = '%2.2m'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[frDetCotizacion."R_SUBTOTAL"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Rich1: TfrxRichView
+          Left = 247.80334
+          Top = 22.67718
+          Width = 287.24428
+          Height = 60.47248
+          OnAfterPrint = 'Rich1OnAfterPrint'
+          ShowHint = False
+          GapX = 2
+          GapY = 1
+          RichEdit = {
+            7B5C727466315C616E73695C616E7369637067313235325C64656666305C6465
+            666C616E67323035387B5C666F6E7474626C7B5C66305C666E696C204D532053
+            616E732053657269663B7D7D0D0A7B5C2A5C67656E657261746F72204D736674
+            6564697420352E34312E31352E313531353B7D5C766965776B696E64345C7563
+            315C706172645C66305C66733136205B6672446574436F74697A6163696F6E2E
+            22525F525446225D5C7061720D0A7D0D0A00}
+        end
+        object Line1: TfrxLineView
+          Left = 56.91342
+          Height = 15.87401575
+          ShowHint = False
+          Diagonal = True
+        end
+        object Line2: TfrxLineView
+          Left = 143.40167
+          Height = 15.87401575
+          ShowHint = False
+          Diagonal = True
+        end
+        object Line4: TfrxLineView
+          Left = 243.66945
+          Height = 15.87401575
+          ShowHint = False
+          Diagonal = True
+        end
+        object Line5: TfrxLineView
+          Left = 537.67749
+          Height = 15.87401575
+          ShowHint = False
+          Diagonal = True
+        end
+        object Line6: TfrxLineView
+          Left = 597.94527
+          Height = 15.87401575
+          ShowHint = False
+          Diagonal = True
+        end
+        object Line7: TfrxLineView
+          Left = 698.21305
+          Height = 15.87401575
+          ShowHint = False
+          Diagonal = True
+        end
+        object Line14: TfrxLineView
+          Left = 11.33859
+          Top = 15.87401575
+          Width = 782.36219984
+          Visible = False
+          ShowHint = False
+          Diagonal = True
+        end
+      end
+      object ColumnHeader1: TfrxColumnHeader
+        Height = 102.04731
+        Top = 170.07885
+        Width = 816.000527
+        object Shape3: TfrxShapeView
+          Left = 11.33859
+          Top = 68.03154
+          Width = 784.25227362
+          Height = 30.23624
+          ShowHint = False
+          Frame.Color = 15000804
+          Shape = skRoundRectangle
+        end
+        object Memo2: TfrxMemoView
+          Left = 13.33859
+          Top = 72.700835
+          Width = 41.57483
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Part.')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo3: TfrxMemoView
+          Left = 59.44882134
+          Top = 72.700835
+          Width = 79.37013
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          HAlign = haRight
+          Memo.UTF8 = (
+            'Cantidad')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo4: TfrxMemoView
+          Left = 146.62201795
+          Top = 72.700835
+          Width = 94.48825
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Cod. Art.')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo11: TfrxMemoView
+          Left = 247.80334
+          Top = 72.700835
+          Width = 287.24428
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Descripcion del Articulo')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo12: TfrxMemoView
+          Left = 540.76407
+          Top = 72.700835
+          Width = 52.91342
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'U/M')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo13: TfrxMemoView
+          Left = 601.82715
+          Top = 72.700835
+          Width = 90.70872
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          HAlign = haRight
+          Memo.UTF8 = (
+            'Precio Unit.')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo14: TfrxMemoView
+          Left = 702.21305
+          Top = 72.700835
+          Width = 90.70872
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          HAlign = haRight
+          Memo.UTF8 = (
+            'Importe')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo26: TfrxMemoView
+          Left = 11.33859
+          Width = 71.81107
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Vendedor')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo27: TfrxMemoView
+          Left = 11.33859
+          Top = 22.67718
+          Width = 71.81107
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Cliente')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo28: TfrxMemoView
+          Left = 11.33859
+          Top = 45.35436
+          Width = 71.81107
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Telefono')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo29: TfrxMemoView
+          Left = 351.49629
+          Top = 45.35436
+          Width = 151.1812
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Condiciones de Pago')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_CLIENTE_NOMBRE: TfrxMemoView
+          Left = 90.70872
+          Top = 22.67718
+          Width = 249.44898
+          Height = 18.89765
+          ShowHint = False
+          DataField = 'R_CLIENTE_NOMBRE'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_CLIENTE_NOMBRE"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_CLIENTE_TELEFONO: TfrxMemoView
+          Left = 90.70872
+          Top = 45.35436
+          Width = 158.74026
+          Height = 18.89765
+          ShowHint = False
+          DataField = 'R_CLIENTE_TELEFONO'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_CLIENTE_TELEFONO"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_CC_NOMBRE: TfrxMemoView
+          Left = 506.45702
+          Top = 45.35436
+          Width = 287.24428
+          Height = 18.89765
+          ShowHint = False
+          DataField = 'R_CC_NOMBRE'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_CC_NOMBRE"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Line8: TfrxLineView
+          Left = 56.91342
+          Top = 68.03154
+          Height = 30.23624
+          ShowHint = False
+          Frame.Color = 15000804
+          Diagonal = True
+        end
+        object Line9: TfrxLineView
+          Left = 243.66945
+          Top = 68.03154
+          Height = 30.23624
+          ShowHint = False
+          Frame.Color = 15000804
+          Diagonal = True
+        end
+        object Line10: TfrxLineView
+          Left = 537.67749
+          Top = 68.03154
+          Height = 30.23624
+          ShowHint = False
+          Frame.Color = 15000804
+          Diagonal = True
+        end
+        object Line11: TfrxLineView
+          Left = 597.94527
+          Top = 68.03154
+          Height = 30.23624
+          ShowHint = False
+          Frame.Color = 15000804
+          Diagonal = True
+        end
+        object Line12: TfrxLineView
+          Left = 698.21305
+          Top = 68.03154
+          Height = 30.23624
+          ShowHint = False
+          Frame.Color = 15000804
+          Diagonal = True
+        end
+        object Line13: TfrxLineView
+          Left = 143.40167
+          Top = 68.03154
+          Height = 30.23624
+          ShowHint = False
+          Frame.Color = 15000804
+          Diagonal = True
+        end
+        object frEncCotizacionR_USUARIO_NOMBRE: TfrxMemoView
+          Left = 90.70872
+          Width = 249.44898
+          Height = 18.89765
+          ShowHint = False
+          DataField = 'R_USUARIO_NOMBRE'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_USUARIO_NOMBRE"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+      end
+      object ReportSummary1: TfrxReportSummary
+        Height = 222.99227
+        Top = 480.00031
+        Width = 816.000527
+        object Memo5: TfrxMemoView
+          Left = 566.9295
+          Top = 3.77953000000002
+          Width = 128.50402
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Sub-Total')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_SUBTOTAL: TfrxMemoView
+          Left = 702.21305
+          Top = 3.77953000000002
+          Width = 90.70872
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = '%2.2m'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_SUBTOTAL"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo6: TfrxMemoView
+          Left = 566.9295
+          Top = 26.45671
+          Width = 128.50402
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Desc. Parcial')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo7: TfrxMemoView
+          Left = 566.9295
+          Top = 49.1338899999998
+          Width = 128.50402
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = '%2.2f'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Desc. Global [frEncCotizacion."R_DESCUENTO_GLOBAL_PORC"] %')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo8: TfrxMemoView
+          Left = 566.9295
+          Top = 71.81107
+          Width = 128.50402
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Sub-Total')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo9: TfrxMemoView
+          Left = 566.9295
+          Top = 94.4882499999999
+          Width = 128.50402
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'I.V.A.')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo10: TfrxMemoView
+          Left = 566.9295
+          Top = 120.94496
+          Width = 128.50402
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Total')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_DESCUENTO_CANTIDAD_PARCIAL: TfrxMemoView
+          Left = 702.21305
+          Top = 26.45671
+          Width = 90.70872
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = '%2.2m'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_DESCUENTO_CANTIDAD_PARCIAL"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_DESCUENTO_CANTIDAD_GLOBAL: TfrxMemoView
+          Left = 702.21305
+          Top = 49.1338899999998
+          Width = 90.70872
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = '%2.2m'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_DESCUENTO_CANTIDAD_GLOBAL"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_SUBTOTAL_NETO: TfrxMemoView
+          Left = 702.21305
+          Top = 71.81107
+          Width = 90.70872
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = '%2.2m'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_SUBTOTAL_NETO"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_IVA_NETO: TfrxMemoView
+          Left = 702.21305
+          Top = 94.4882499999999
+          Width = 90.70872
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = '%2.2m'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_IVA_NETO"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_TOTAL_NETO: TfrxMemoView
+          Left = 702.21305
+          Top = 120.94496
+          Width = 90.70872
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = '%2.2m'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_TOTAL_NETO"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_ANTICIPO: TfrxMemoView
+          Left = 702.21305
+          Top = 147.40167
+          Width = 90.70872
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = '%2.2m'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_ANTICIPO"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo15: TfrxMemoView
+          Left = 566.9295
+          Top = 147.40167
+          Width = 128.50402
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            '(-) Anticipo')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo32: TfrxMemoView
+          Left = 566.9295
+          Top = 170.07885
+          Width = 128.50402
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            '(+) Financiamiento')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_FINANCIAMIENTO: TfrxMemoView
+          Left = 702.21305
+          Top = 170.07885
+          Width = 90.70872
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = '%2.2m'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_FINANCIAMIENTO"]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo31: TfrxMemoView
+          Left = 566.9295
+          Top = 192.75603
+          Width = 128.50402
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Gran-Total')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object frEncCotizacionR_GRANTOTAL: TfrxMemoView
+          Left = 702.21305
+          Top = 192.75603
+          Width = 90.70872
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = '%2.2m'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_GRANTOTAL"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Shape4: TfrxShapeView
+          Left = 11.33859
+          Top = 3.77953000000002
+          Width = 249.44898
+          Height = 94.48825
+          ShowHint = False
+        end
+        object Shape5: TfrxShapeView
+          Left = 268.34663
+          Top = 3.77953000000002
+          Width = 249.44898
+          Height = 94.48825
+          ShowHint = False
+        end
+        object Shape6: TfrxShapeView
+          Left = 11.33859
+          Top = 109.60637
+          Width = 506.45702
+          Height = 94.48825
+          ShowHint = False
+        end
+        object Memo33: TfrxMemoView
+          Left = 16.11812
+          Top = 5.33859000000001
+          Width = 94.48825
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Acepto')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo34: TfrxMemoView
+          Left = 275.90569
+          Top = 5.33859000000001
+          Width = 94.48825
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Acepto')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo35: TfrxMemoView
+          Left = 15.11812
+          Top = 76.5906
+          Width = 241.88992
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Cliente')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo36: TfrxMemoView
+          Left = 272.12616
+          Top = 76.5906
+          Width = 241.88992
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Vendedor')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Line15: TfrxLineView
+          Left = 11.33859
+          Top = 75.0315399999999
+          Width = 249.44898
+          ShowHint = False
+          Diagonal = True
+        end
+        object Line16: TfrxLineView
+          Left = 268.34663
+          Top = 75.0315399999999
+          Width = 249.44898
+          ShowHint = False
+          Diagonal = True
+        end
+        object Memo37: TfrxMemoView
+          Left = 16.11812
+          Top = 112.3859
+          Width = 105.82684
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Observaciones')
+          ParentFont = False
+        end
+        object frEncCotizacionR_OBSERVACIONES: TfrxMemoView
+          Left = 128.50402
+          Top = 113.3859
+          Width = 381.73253
+          Height = 83.14966
+          ShowHint = False
+          DataField = 'R_OBSERVACIONES'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[frEncCotizacion."R_OBSERVACIONES"]')
+          ParentFont = False
+        end
+      end
+      object PageFooter1: TfrxPageFooter
+        Height = 41.57483
+        Top = 725.66976
+        Width = 816.000527
+        object Memo19: TfrxMemoView
+          Left = 19.55906
+          Top = 1.77953000000002
+          Width = 173.85838
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold, fsItalic]
+          Memo.UTF8 = (
+            'Powered by AriesSoftware')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Line3: TfrxLineView
+          Left = 7.55906
+          Top = 2
+          Width = 801.26036
+          ShowHint = False
+          Diagonal = True
+        end
+        object Memo21: TfrxMemoView
+          Left = 752.12647
+          Top = 3.66929500000003
+          Width = 52.91342
+          Height = 15.11812
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[Page#] / [TotalPages#]')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+        object Memo30: TfrxMemoView
+          Left = 197.31509
+          Top = 1.77953000000002
+          Width = 120.94496
+          Height = 18.89765
+          ShowHint = False
+          DisplayFormat.DecimalSeparator = '.'
+          DisplayFormat.FormatStr = 'hh:mm am/pm'
+          DisplayFormat.Kind = fkDateTime
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsItalic]
+          Memo.UTF8 = (
+            '(frw_cotizacion.fr3)')
+          ParentFont = False
+          WordWrap = False
+          VAlign = vaCenter
+        end
+      end
+    end
+  end
+  object qyVerificarFolio: TIBQuery
+    Database = dmIBModulo.ibSistema
+    Transaction = dmIBModulo.ibSistemaTransaccion
+    SQL.Strings = (
+      'SELECT *'
+      'FROM VERIFICAR_FOLIO_COTIZACION(:P_ID, :P_FOLIO)')
+    Left = 160
+    Top = 16
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'P_ID'
+        ParamType = ptUnknown
+        Value = '0'
+      end
+      item
+        DataType = ftString
+        Name = 'P_FOLIO'
+        ParamType = ptUnknown
+        Value = '0'
+      end>
+    object qyVerificarFolioR_ACEPTADO: TIBStringField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_ACEPTADO'
+      ReadOnly = True
+      Size = 2
+    end
+  end
+  object spAUTO_FOLIO: TIBStoredProc
+    Database = dmIBModulo.ibSistema
+    Transaction = dmIBModulo.ibSistemaTransaccion
+    StoredProcName = 'AUTO_FOLIO'
+    Left = 64
+    Top = 16
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'R_FOLIO'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'P_MODULO'
+        ParamType = ptInput
+        Value = '0'
+      end
+      item
+        DataType = ftInteger
+        Name = 'P_SUBCLASE'
+        ParamType = ptInput
+        Value = '0'
+      end
+      item
+        DataType = ftString
+        Name = 'P_AFECTAR'
+        ParamType = ptInput
+        Value = 'No'
+      end>
+  end
+  object spMODIFICAR_FOLIO: TIBStoredProc
+    Database = dmIBModulo.ibSistema
+    Transaction = dmIBModulo.ibSistemaTransaccion
+    StoredProcName = 'MODIFICAR_FOLIO'
+    Left = 96
+    Top = 16
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'P_MODULO'
+        ParamType = ptInput
+        Value = '0'
+      end
+      item
+        DataType = ftInteger
+        Name = 'P_SUBCLASE'
+        ParamType = ptInput
+        Value = '0'
+      end
+      item
+        DataType = ftInteger
+        Name = 'P_CONSECUTIVO'
+        ParamType = ptInput
+        Value = '0'
+      end>
+  end
+  object spACTUALIZA_COTIZACION: TIBStoredProc
+    Database = dmIBModulo.ibSistema
+    Transaction = dmIBModulo.ibSistemaTransaccion
+    StoredProcName = 'ACTUALIZA_COTIZACION'
+    Left = 128
+    Top = 16
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'P_ID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'P_FOLIO'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'P_USUARIO'
+        ParamType = ptInput
+      end>
+  end
+end

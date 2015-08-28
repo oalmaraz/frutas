@@ -1,0 +1,228 @@
+unit URPT_PEDIDO_PARTIDAS;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+    Db, IBCustomDataSet, IBQuery,
+  QRCtrls, QuickRpt, ExtCtrls, StdCtrls;
+
+type
+  TRPT_PEDIDO_PARTIDAS = class(TForm)
+    qrReporte: TQuickRep;
+    QRBand3: TQRBand;
+    QRBand18: TQRBand;
+    QRBand1: TQRBand;
+    QRLabel2: TQRLabel;
+    QRDBText2: TQRDBText;
+    QRLabel3: TQRLabel;
+    QRDBText3: TQRDBText;
+    QRLabel30: TQRLabel;
+    qrImagen: TQRImage;
+    QRDBText27: TQRDBText;
+    QRLabel4: TQRLabel;
+    QRDBText1: TQRDBText;
+    QRLabel1: TQRLabel;
+    laPedido: TQRLabel;
+    qyPedidoPartidas: TIBQuery;
+    qyPedidoPartidasR_ID: TIntegerField;
+    qyPedidoPartidasR_PEDIDO: TIntegerField;
+    qyPedidoPartidasR_MATERIAL: TIntegerField;
+    qyPedidoPartidasR_CLAVE: TIBStringField;
+    qyPedidoPartidasR_DESCRIPCION: TIBStringField;
+    qyPedidoPartidasR_UNIDAD: TIntegerField;
+    qyPedidoPartidasR_DESCRIPCION_UNIDAD: TIBStringField;
+    qyPedidoPartidasR_CANTIDAD: TFloatField;
+    qyPedidoPartidasR_CANTIDAD_ENTREGADA: TFloatField;
+    qyPedidoPartidasR_PRECIO: TFloatField;
+    qyPedidoPartidasR_SUBTOTAL: TFloatField;
+    qyPedidoPartidasR_IVA: TFloatField;
+    qyPedidoPartidasR_IEPS: TFloatField;
+    qyPedidoPartidasR_IMPUESTO1: TFloatField;
+    qyPedidoPartidasR_IMPUESTO2: TFloatField;
+    qyPedidoPartidasR_TOTAL: TFloatField;
+    qyPedidoPartidasR_DESCUENTO_PORC: TFloatField;
+    qyPedidoPartidasR_DP: TFloatField;
+    qyPedidoPartidasR_DG: TFloatField;
+    qyPedidoPartidasR_GT: TFloatField;
+    qyPedidoPartidasR_ESTATUS: TIBStringField;
+    qyPedidoPartidasR_COTIZACION: TIntegerField;
+    qyPedidoPartidasR_CLAVE_COTIZACION: TIBStringField;
+    qyPedidoPartidasR_PRECIO_SIN_IMPUESTOS: TFloatField;
+    qyPedidoPartidasR_CAJAS: TIntegerField;
+    qyPedidoPartidasR_ROWS: TIntegerField;
+    qyPedidoPartidasR_IVA_PORC: TFloatField;
+    qyPedidoPartidasR_IEPS_PORC: TFloatField;
+    qyPedidoPartidasR_IMPUESTO1_PORC: TFloatField;
+    qyPedidoPartidasR_IMPUESTO2_PORC: TFloatField;
+    qyPedidoPartidasR_MATERIAL_CBARRAS: TIBStringField;
+    qyPedidoPartidasR_MATERIAL_OBSERVACIONES: TBlobField;
+    qyPedidoPartidasR_MATERIAL_FOTO: TBlobField;
+    dsPedidoPartidas: TDataSource;
+    qyPedidoPartidasR_PZAS_X_CAJA: TIntegerField;
+    QRLabel5: TQRLabel;
+    QRDBText4: TQRDBText;
+    QRDBText5: TQRDBText;
+    QRSysData2: TQRSysData;
+    QRLabel6: TQRLabel;
+    QRLabel7: TQRLabel;
+    QRLabel8: TQRLabel;
+    QRSysData1: TQRSysData;
+    QRShape1: TQRShape;
+    QRShape2: TQRShape;
+    QRLabel9: TQRLabel;
+    QRDBText6: TQRDBText;
+    qyPedidoPartidasR_COMENTARIO: TIBStringField;
+    Image1: TImage;
+    Button1: TButton;
+    QRLabel10: TQRLabel;
+    QRDBText7: TQRDBText;
+    procedure QRBand1BeforePrint(Sender: TQRCustomBand;
+      var PrintBand: Boolean);
+      {
+    procedure prPartidasPreviewGetUserData(Sender: TObject; Obj: TprObj;
+      ObjRec: TprObjRec; var PreviewUserData: TprPreviewUserData);
+      }
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+    nulo : boolean;
+    procedure SetID(valor : integer);
+    procedure SetPEDIDO(valor : string);
+    procedure imagenVer(consulta : TDataSource; campo : string; imagen : TQRImage);overload;
+//    procedure imagenVer(consulta : TDataSource; campo : string; imagen : TfrxPictureView);overload;
+  public
+    { Public declarations }
+    procedure Preview;
+  published
+     property ID    : integer write SetID;
+     property PEDIDO : string write SetPEDIDO;
+  end;
+
+var
+  RPT_PEDIDO_PARTIDAS: TRPT_PEDIDO_PARTIDAS;
+
+implementation
+
+uses
+  IBModulo, jpeg, Clipbrd;
+
+{$R *.DFM}
+
+type
+  TGraphType = (gtBitmap, gtIcon, gtMetafile, gtJpeg);
+
+procedure TRPT_PEDIDO_PARTIDAS.Preview;
+begin
+   qrReporte.PreviewModal;
+//   frxReport1.ShowReport;
+end;
+
+procedure TRPT_PEDIDO_PARTIDAS.SetID(valor : integer);
+begin
+   qyPedidoPartidas.Close;
+   qyPedidoPartidas.ParamByName('P_PEDIDO').AsInteger := valor;
+   qyPedidoPartidas.Open;
+end;
+
+procedure TRPT_PEDIDO_PARTIDAS.SetPEDIDO(valor : string);
+begin
+   laPedido.Caption := valor;
+end;
+
+procedure TRPT_PEDIDO_PARTIDAS.imagenVer(consulta : TDataSource; campo : string; imagen : TQRImage);
+var
+  Stream    : TMemoryStream;
+  Jpg       : TJpegImage;
+  GraphType : TGraphType;
+begin
+  Jpg    := nil;
+  Stream := nil;
+  try
+    Stream := TMemoryStream.Create;
+    TBlobField(consulta.DataSet.FieldByName(campo)).SaveToStream(Stream);
+    if Stream.Size > 0 then
+    begin
+      Stream.Position := 0;
+      Stream.Read(GraphType, 1);
+      case GraphType of
+         gtBitmap   : imagen.Picture.Bitmap.LoadFromStream(Stream);
+         gtIcon     : imagen.Picture.Icon.LoadFromStream(Stream);
+         gtMetafile : imagen.Picture.Metafile.LoadFromStream(Stream);
+         gtJpeg     : begin
+                         Jpg := TJpegImage.Create;
+                         Jpg.LoadFromStream(Stream);
+                         imagen.Picture.Assign(Jpg);
+                      end
+      else
+         imagen.Picture.Assign(nil);
+      end;
+    end
+       else
+          imagen.Picture.Assign(nil);
+  except
+    imagen.Picture.Assign(nil);
+  end;
+  jpg.Free;
+  Stream.Free;
+end;
+
+{procedure TRPT_PEDIDO_PARTIDAS.imagenVer(consulta : TDataSource; campo : string; imagen : TfrxPictureView);
+var
+  Stream    : TMemoryStream;
+  Jpg       : TJpegImage;
+  GraphType : TGraphType;
+begin
+  Jpg    := nil;
+  Stream := nil;
+  try
+    Stream := TMemoryStream.Create;
+    TBlobField(consulta.DataSet.FieldByName(campo)).SaveToStream(Stream);
+    if Stream.Size > 0 then
+    begin
+      Stream.Position := 0;
+      Stream.Read(GraphType, 1);
+      case GraphType of
+         gtBitmap   : imagen.Picture.Bitmap.LoadFromStream(Stream);
+         gtIcon     : imagen.Picture.Icon.LoadFromStream(Stream);
+         gtMetafile : imagen.Picture.Metafile.LoadFromStream(Stream);
+         gtJpeg     : begin
+                         Jpg := TJpegImage.Create;
+                         Jpg.LoadFromStream(Stream);
+                         imagen.Picture.Assign(Jpg);
+                      end
+      else
+         imagen.Picture.Assign(nil);
+      end;
+    end
+       else
+          imagen.Picture.Assign(nil);
+  except
+    imagen.Picture.Assign(nil);
+  end;
+  jpg.Free;
+  Stream.Free;
+end;
+}
+procedure TRPT_PEDIDO_PARTIDAS.QRBand1BeforePrint(Sender: TQRCustomBand;
+  var PrintBand: Boolean);
+begin
+   imagenVer(dsPedidoPartidas, 'R_MATERIAL_FOTO', qrImagen);
+end;
+{
+procedure TRPT_PEDIDO_PARTIDAS.prPartidasPreviewGetUserData(Sender: TObject;
+  Obj: TprObj; ObjRec: TprObjRec; var PreviewUserData: TprPreviewUserData);
+begin
+end;
+ }
+procedure TRPT_PEDIDO_PARTIDAS.Button1Click(Sender: TObject);
+var
+  MyFormat : Word;
+  AData    : Cardinal;
+  APalette : HPALETTE;
+begin
+   image1.Picture.SaveToClipboardFormat(MyFormat, AData, APalette);
+   ClipBoard. SetAsHandle(MyFormat, AData);
+end;
+
+end.

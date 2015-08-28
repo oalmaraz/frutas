@@ -1,0 +1,679 @@
+inherited frmCapturar_empresa: TfrmCapturar_empresa
+  Left = 535
+  Top = 153
+  Caption = 'Empresa'
+  ClientHeight = 535
+  ClientWidth = 707
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited paLienzo: TPanel
+    Width = 707
+    Height = 453
+    inherited fpMasDatos: TPanel
+      Top = 349
+      Width = 703
+      Height = 102
+      inherited fpMasDatoDentro: TPanel
+        Width = 701
+        Height = 100
+        object Label12: TLabel
+          Left = 8
+          Top = 24
+          Width = 105
+          Height = 13
+          Caption = 'Link Informar Empresa'
+        end
+        object Label13: TLabel
+          Left = 285
+          Top = 24
+          Width = 110
+          Height = 13
+          Caption = 'Nombre Base de Datos'
+        end
+        object lfBaseDeDatos: TDBText
+          Left = 285
+          Top = 39
+          Width = 332
+          Height = 22
+          Color = 12615680
+          DataField = 'NOMBRE_AWR'
+          DataSource = dsEmpresas
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clYellow
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object cbEmpresas: TDBLookupComboBox
+          Left = 8
+          Top = 40
+          Width = 273
+          Height = 21
+          DataField = 'ID_INFORMAR'
+          DataSource = dsFuente
+          KeyField = 'ID'
+          ListField = 'NOMBRE'
+          ListSource = dsEmpresas
+          TabOrder = 0
+        end
+        object buCFD: TBitBtn
+          Left = 8
+          Top = 64
+          Width = 65
+          Height = 33
+          Caption = 'CFD'
+          TabOrder = 1
+          OnClick = buCFDClick
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFE6EAED677C8D5F77875F77875B728457708152
+            6B7C4D6677476072425C6E3E5A6C3A5669DADFE3FF00FFFF00FFFF00FF8197A5
+            A2CCE2389ED23DA1D461BADF5CB7DD54B2DB4CACD843A6D63AA0D3329AD02E85
+            B53A5669FF00FFFF00FFFF00FF8397A8B4E4FB4BBBF241B4EE53C1F45494A839
+            5E6145879B56C3F54CBCF242B5EF329AD03E5A6CFF00FFFF00FFFF00FF879CAC
+            B9E8FC57C4F64DBDF243B6EF62CBF93C606268CFFB5FCAF856C3F54CBCF23AA0
+            D3425C6EFF00FFFF00FFFF00FF8BA2B0BDEBFE62CBF959C5F650BFF328555E3B
+            60623C606268CFFB5FCAF856C3F543A6D6476072FF00FFFF00FFFF00FF8EA2B3
+            C1EDFF6CD2FC64CDFA5CC7F749A5C82C575F62AABE6FD4FD68CFFB5FCAF84CAC
+            D84D6677FF00FFFF00FFFF00FF91A7B7C1EEFF73D7FF6DD3FD66CEFB5EC8F855
+            C2F55AC6F774D8FF6FD4FD68CFFB54B2DB526B7CFF00FFFF00FFFF00FF97ABBC
+            B9E2F3C1EEFFC1EEFFBFECFEBCEAFDB9E8FCB5E5FBBAE9FDC1EEFFBFECFEAAD2
+            E46D8393FF00FFFF00FFFF00FFEDF1F49DB0BF95A9BA90A6B68DA2B38BA2B087
+            9BAC859CAA8297A78096A47D92A27B90A0E6EAEDFF00FFFF00FFFF00FFFF00FF
+            FF00FFA3B4C2B8EBFF476174FF00FFFF00FFFF00FF8798A572D7FE435F71FF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFB5C3CECAF0FE5A7181D8DEE1FF
+            00FFDBE0E38699A479D9FE4F6779FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFC5D0D8D4EBF5B8D5E2697E8C5F76855B728284C8E47ECBE95A7384FF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE5EAEECCD5DDD9EDF6D5F2FDC9
+            EFFEBBEBFEA3D7ED7A909FD8DFE3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFE6EBEFD3DAE1CAD3DABDC9D1AEBBC59CACB7D9DFE3FF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        end
+        object meCertificado: TDBMemo
+          Left = 624
+          Top = 24
+          Width = 137
+          Height = 25
+          DataField = 'R_CERTIFICADO'
+          DataSource = dsCFD
+          TabOrder = 2
+          Visible = False
+        end
+        object mePKEY: TDBMemo
+          Left = 624
+          Top = 56
+          Width = 137
+          Height = 25
+          DataField = 'R_PKEY'
+          DataSource = dsCFD
+          TabOrder = 3
+          Visible = False
+        end
+      end
+    end
+    inherited pcSujetos: TPageControl
+      Width = 703
+      Height = 347
+      inherited tsDatos: TTabSheet
+        inherited fpDatos: TPanel
+          Width = 695
+          Height = 299
+          inherited laCtaContable: TLabel
+            Top = 286
+          end
+          object Label14: TLabel [13]
+            Left = 1
+            Top = 245
+            Width = 148
+            Height = 13
+            Caption = 'Presentacion Imagen de Fondo'
+            Transparent = True
+          end
+          inherited laClave: TBitBtn
+            TabOrder = 23
+          end
+          object buOriginal: TBitBtn [16]
+            Left = 151
+            Top = 269
+            Width = 67
+            Height = 23
+            Caption = 'Original'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -11
+            Font.Name = 'Arial'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 25
+            OnClick = buOriginalClick
+          end
+          object buLoad: TBitBtn [17]
+            Left = 151
+            Top = 245
+            Width = 67
+            Height = 23
+            Caption = 'Cargar'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -11
+            Font.Name = 'Arial'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 24
+            OnClick = buLoadClick
+          end
+          inherited paFoto: TPanel
+            inherited imFoto: TImage
+              OnDblClick = nil
+            end
+          end
+          inherited cbCtasContables: TDBLookupComboBox
+            Top = 302
+            Width = 148
+            TabOrder = 22
+          end
+          inherited buActCtas: TBitBtn
+            Left = 150
+            Top = 302
+          end
+          inherited buLimCtas: TBitBtn
+            Left = 173
+            Top = 302
+          end
+          object cbImagenPresentacion: TDBComboBox
+            Left = 1
+            Top = 261
+            Width = 148
+            Height = 21
+            DataField = 'TILEMODE'
+            DataSource = dsFuente
+            ItemHeight = 13
+            Items.Strings = (
+              'tmCenter'
+              'tmCenterVBottom'
+              'tmCenterVTop'
+              'tmLeftVBottom'
+              'tmLeftVCenter'
+              'tmLeftVTop'
+              'tmRightVBottom'
+              'tmRightVCenter'
+              'tmRightVTop'
+              'tmStretch'
+              'tmTile')
+            TabOrder = 19
+          end
+        end
+      end
+      inherited tsDomicilio: TTabSheet
+        inherited fpDomicilio: TPanel
+          Width = 695
+          Height = 299
+        end
+      end
+      inherited tsContactos: TTabSheet
+        inherited paContactos: TPanel
+          Width = 510
+          Height = 241
+        end
+        inherited fpContacto: TPanel
+          Width = 695
+          inherited fpContactos: TPanel
+            Width = 681
+          end
+        end
+        inherited fpContactosDetalle: TPanel
+          Height = 241
+          inherited fcStatusBar1: TfcStatusBar
+            Panels = <
+              item
+                Component = deIDContactos
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -11
+                Font.Name = 'MS Sans Serif'
+                Font.Style = []
+                Name = 'Panel0'
+                Style = psControl
+                Tag = 0
+                TextOptions.Alignment = taLeftJustify
+                TextOptions.VAlignment = vaVCenter
+                Width = '50'
+              end
+              item
+                Component = dnNavegarContactos
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -11
+                Font.Name = 'MS Sans Serif'
+                Font.Style = []
+                Name = 'Panel1'
+                Style = psControl
+                Tag = 0
+                TextOptions.Alignment = taLeftJustify
+                TextOptions.VAlignment = vaVCenter
+                Width = '50'
+              end>
+          end
+        end
+      end
+    end
+  end
+  inherited fpPadre: TPanel
+    Width = 707
+    inherited Panel1: TPanel
+      Width = 707
+    end
+  end
+  inherited Panel2: TPanel
+    Top = 513
+    Width = 707
+  end
+  inherited dsFuente: TDataSource
+    Left = 392
+    Top = 360
+  end
+  inherited qyBotones: TIBQuery
+    Left = 456
+    Top = 421
+  end
+  inherited TCapturar: TIBTable
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+      end
+      item
+        Name = 'SUJETO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ID_INFORMAR'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ESTATUS'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'TILEMODE'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'CFD'
+        DataType = ftInteger
+      end>
+    IndexDefs = <
+      item
+        Name = 'RDB$PRIMARY105'
+        Fields = 'ID'
+        Options = [ixPrimary, ixUnique]
+      end
+      item
+        Name = 'RDB$FOREIGN106'
+        Fields = 'SUJETO'
+      end>
+    StoreDefs = True
+    TableName = 'SUJETOS_EMPRESA'
+    Left = 360
+    Top = 360
+    object TCapturarID: TIntegerField [0]
+      FieldName = 'ID'
+      Required = True
+    end
+    object TCapturarSUJETO: TIntegerField [1]
+      FieldName = 'SUJETO'
+    end
+    object TCapturarID_INFORMAR: TIntegerField [2]
+      FieldName = 'ID_INFORMAR'
+    end
+    object TCapturarESTATUS: TIBStringField [3]
+      FieldName = 'ESTATUS'
+    end
+    object TCapturarTILEMODE: TIBStringField [4]
+      FieldName = 'TILEMODE'
+    end
+    object TCapturarCFD: TIntegerField [5]
+      FieldName = 'CFD'
+    end
+  end
+  inherited spID: TIBStoredProc
+    Left = 328
+    Top = 360
+  end
+  inherited TSujetos: TIBTable
+    Top = 391
+  end
+  inherited dsSujetos: TDataSource
+    Top = 391
+  end
+  inherited TTelefonos: TIBTable
+    Top = 391
+  end
+  inherited dsTelefonos: TDataSource
+    Top = 391
+  end
+  inherited TDomicilios: TIBTable
+    Left = 328
+    Top = 421
+  end
+  inherited dsDomicilios: TDataSource
+    Left = 360
+    Top = 421
+  end
+  inherited TContactos: TIBTable
+    Left = 56
+    Top = 444
+  end
+  inherited dsContactos: TDataSource
+    Left = 88
+    Top = 444
+  end
+  inherited TTelefonosContactos: TIBTable
+    Left = 120
+    Top = 444
+  end
+  inherited dsTelefonosContactos: TDataSource
+    Left = 152
+    Top = 444
+  end
+  inherited qyCiudades: TIBQuery
+    Left = 392
+    Top = 421
+  end
+  inherited dsCiudades: TDataSource
+    Left = 424
+    Top = 421
+  end
+  inherited spIDContactos: TIBStoredProc
+    Left = 24
+    Top = 444
+  end
+  inherited pmImagen: TPopupMenu
+    Left = 358
+    Top = 61
+  end
+  inherited qyTelefonosTipos: TIBQuery
+    Left = 550
+    Top = 365
+  end
+  inherited dsTelefonosTipos: TDataSource
+    Left = 582
+    Top = 365
+  end
+  object TEmpresas: TIBTable
+    Database = dmIBModulo.ibInformar
+    Transaction = dmIBModulo.ibInformarTransaccion
+    FieldDefs = <
+      item
+        Name = 'ID'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'NOMBRE'
+        DataType = ftString
+        Size = 100
+      end
+      item
+        Name = 'NOMBRE_AWR'
+        DataType = ftString
+        Size = 50
+      end>
+    IndexDefs = <
+      item
+        Name = 'RDB$PRIMARY82'
+        Fields = 'ID'
+        Options = [ixPrimary, ixUnique]
+      end>
+    StoreDefs = True
+    TableName = 'EMPRESAS'
+    Left = 216
+    Top = 441
+    object TEmpresasID: TIntegerField
+      FieldName = 'ID'
+      Required = True
+    end
+    object TEmpresasNOMBRE: TIBStringField
+      FieldName = 'NOMBRE'
+      Size = 100
+    end
+    object TEmpresasNOMBRE_AWR: TIBStringField
+      FieldName = 'NOMBRE_AWR'
+      Size = 50
+    end
+  end
+  object dsEmpresas: TDataSource
+    DataSet = TEmpresas
+    Left = 247
+    Top = 441
+  end
+  object qyEmpresaUpdate: TIBQuery
+    Database = dmIBModulo.ibInformar
+    Transaction = dmIBModulo.ibInformarTransaccion
+    SQL.Strings = (
+      'UPDATE EMPRESAS'
+      'SET NOMBRE = :P_NOMBRE'
+      'WHERE ID = :P_ID')
+    Left = 184
+    Top = 441
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'P_NOMBRE'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'P_ID'
+        ParamType = ptUnknown
+      end>
+  end
+  object qyCFD: TIBQuery
+    Database = dmIBModulo.ibSistema
+    Transaction = dmIBModulo.ibSistemaTransaccion
+    SQL.Strings = (
+      'SELECT *'
+      'FROM T_CFD(:P_ID)')
+    Left = 32
+    Top = 333
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'P_ID'
+        ParamType = ptUnknown
+        Value = '0'
+      end>
+  end
+  object spA_CFD_EMPRESA: TIBStoredProc
+    Database = dmIBModulo.ibSistema
+    Transaction = dmIBModulo.ibSistemaTransaccion
+    StoredProcName = 'A_CFD_EMPRESA'
+    Left = 62
+    Top = 333
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'R_ID'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'P_ID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_APROBACION'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_ANIO_APROBACION'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_SERIE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'P_FOLIO_INI'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'P_FOLIO_FIN'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_SSL'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_CER'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_KEY'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDateTime
+        Name = 'P_VIGENCIA_INI'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDateTime
+        Name = 'P_VIGENCIA_FIN'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_CLAVE_CER'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_NUM_CER'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftBlob
+        Name = 'P_CERTIFICADO'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftBlob
+        Name = 'P_PKEY'
+        ParamType = ptInput
+      end>
+  end
+  object spM_CFD_EMPRESA: TIBStoredProc
+    Database = dmIBModulo.ibSistema
+    Transaction = dmIBModulo.ibSistemaTransaccion
+    StoredProcName = 'M_CFD_EMPRESA'
+    Left = 94
+    Top = 333
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'R_ID'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftInteger
+        Name = 'P_ID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_APROBACION'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_ANIO_APROBACION'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_SERIE'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'P_FOLIO_INI'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'P_FOLIO_FIN'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_SSL'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_CER'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_KEY'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDateTime
+        Name = 'P_VIGENCIA_INI'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDateTime
+        Name = 'P_VIGENCIA_FIN'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_CLAVE_CER'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = 'P_NUM_CER'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftBlob
+        Name = 'P_CERTIFICADO'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftBlob
+        Name = 'P_PKEY'
+        ParamType = ptInput
+      end>
+  end
+  object dsCFD: TDataSource
+    DataSet = qyCFD
+    Left = 32
+    Top = 365
+  end
+end

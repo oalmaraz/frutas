@@ -1,0 +1,41 @@
+unit explorar_presentaciones;
+                          
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  explorarMDI, dxTL, dxDBCtrl, dxDBGrid, Menus, XPMenu, dxPSCore, Db,
+  IBCustomDataSet, IBQuery, Mensajes, StdCtrls, AHMTButton, dxCntner,
+  dxEditor, dxEdLib, fcLabel, Mask, DBCtrls, fcStatusBar, fcButton,
+  fcImgBtn, JvComponent, JvArrowBtn, jpeg, fcImager, ExtCtrls, FashionPanel,
+  fcShapeBtn, dxExEdtr, ComCtrls, Grids, DBGrids, Buttons;
+
+type
+  TfrmExplorar_presentaciones = class(TfrmExplorarMDI)
+    dgExplorarID: TdxDBGridColumn;
+    dgExplorarDESCRIPCION: TdxDBGridColumn;
+    qyExplorarR_ID: TIntegerField;
+    qyExplorarR_DESCRIPCION: TIBStringField;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmExplorar_presentaciones: TfrmExplorar_presentaciones;
+
+implementation
+
+{$R *.DFM}
+
+procedure TfrmExplorar_presentaciones.FormCreate(Sender: TObject);
+begin
+  inherited;
+  EXP_NVO     := true;
+  CAMPO_FECHA := '';
+  FForma      := 'frmCapturar_presentaciones';
+end;
+
+end.

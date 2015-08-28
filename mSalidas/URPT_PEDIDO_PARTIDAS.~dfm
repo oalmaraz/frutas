@@ -1,0 +1,1092 @@
+object RPT_PEDIDO_PARTIDAS: TRPT_PEDIDO_PARTIDAS
+  Left = 301
+  Top = 183
+  Width = 798
+  Height = 568
+  Caption = 'RPT_PEDIDO_PARTIDAS'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Scaled = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = 184
+    Top = 16
+    Width = 105
+    Height = 105
+  end
+  object qrReporte: TQuickRep
+    Left = 72
+    Top = 166
+    Width = 653
+    Height = 845
+    Frame.Color = clBlack
+    Frame.DrawTop = False
+    Frame.DrawBottom = False
+    Frame.DrawLeft = False
+    Frame.DrawRight = False
+    DataSet = qyPedidoPartidas
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = []
+    Functions.Strings = (
+      'PAGENUMBER'
+      'COLUMNNUMBER'
+      'REPORTTITLE')
+    Functions.DATA = (
+      '0'
+      '0'
+      #39#39)
+    Options = [FirstPageHeader, LastPageFooter]
+    Page.Columns = 2
+    Page.Orientation = poPortrait
+    Page.PaperSize = Letter
+    Page.Values = (
+      50
+      2794
+      50
+      2159
+      50
+      50
+      0)
+    PrinterSettings.Copies = 1
+    PrinterSettings.OutputBin = Auto
+    PrinterSettings.Duplex = False
+    PrinterSettings.FirstPage = 0
+    PrinterSettings.LastPage = 0
+    PrinterSettings.UseStandardprinter = False
+    PrinterSettings.UseCustomBinCode = False
+    PrinterSettings.CustomBinCode = 0
+    PrinterSettings.ExtendedDuplex = 0
+    PrinterSettings.UseCustomPaperCode = False
+    PrinterSettings.CustomPaperCode = 0
+    PrinterSettings.PrintMetaFile = False
+    PrintIfEmpty = True
+    SnapToGrid = True
+    Units = MM
+    Zoom = 80
+    PrevFormStyle = fsNormal
+    PreviewInitialState = wsMaximized
+    object QRBand3: TQRBand
+      Left = 15
+      Top = 222
+      Width = 623
+      Height = 23
+      Frame.Color = clBlack
+      Frame.DrawTop = False
+      Frame.DrawBottom = False
+      Frame.DrawLeft = False
+      Frame.DrawRight = False
+      Frame.Width = 2
+      AlignToBottom = False
+      Color = clWhite
+      ForceNewColumn = False
+      ForceNewPage = False
+      Size.Values = (
+        76.0677083333333
+        2060.44270833333)
+      BandType = rbPageFooter
+      object QRSysData2: TQRSysData
+        Left = 590
+        Top = 1
+        Width = 31
+        Height = 12
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.6875
+          1951.30208333333
+          3.30729166666667
+          102.526041666667)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        Color = clWhite
+        Data = qrsPageNumber
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        FontSize = 8
+      end
+      object QRLabel6: TQRLabel
+        Left = 562
+        Top = 1
+        Width = 26
+        Height = 12
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.6875
+          1858.69791666667
+          3.30729166666667
+          85.9895833333333)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Pagina'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRLabel7: TQRLabel
+        Left = 3
+        Top = 1
+        Width = 170
+        Height = 12
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.6875
+          9.921875
+          3.30729166666667
+          562.239583333333)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Powered by AriesSoftware (01336160047)'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+    end
+    object QRBand18: TQRBand
+      Left = 15
+      Top = 15
+      Width = 623
+      Height = 72
+      Frame.Color = clBlack
+      Frame.DrawTop = False
+      Frame.DrawBottom = False
+      Frame.DrawLeft = False
+      Frame.DrawRight = False
+      AlignToBottom = False
+      Color = clWhite
+      ForceNewColumn = False
+      ForceNewPage = False
+      Size.Values = (
+        238.125
+        2060.44270833333)
+      BandType = rbPageHeader
+      object QRLabel1: TQRLabel
+        Left = 2
+        Top = 57
+        Width = 33
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          6.61458333333333
+          188.515625
+          109.140625)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Pedido'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 10
+      end
+      object laPedido: TQRLabel
+        Left = 37
+        Top = 57
+        Width = 37
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          122.369791666667
+          188.515625
+          122.369791666667)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Pedido'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 10
+      end
+      object QRLabel8: TQRLabel
+        Left = 562
+        Top = 58
+        Width = 26
+        Height = 12
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.6875
+          1858.69791666667
+          191.822916666667
+          85.9895833333333)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Pagina'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        WordWrap = True
+        FontSize = 8
+      end
+      object QRSysData1: TQRSysData
+        Left = 590
+        Top = 58
+        Width = 31
+        Height = 12
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          39.6875
+          1951.30208333333
+          191.822916666667
+          102.526041666667)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        Color = clWhite
+        Data = qrsPageNumber
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+        FontSize = 8
+      end
+    end
+    object QRBand1: TQRBand
+      Left = 15
+      Top = 87
+      Width = 311
+      Height = 135
+      Frame.Color = clBlack
+      Frame.DrawTop = False
+      Frame.DrawBottom = False
+      Frame.DrawLeft = False
+      Frame.DrawRight = False
+      Frame.Style = psDot
+      AlignToBottom = False
+      BeforePrint = QRBand1BeforePrint
+      Color = clWhite
+      ForceNewColumn = False
+      ForceNewPage = False
+      Size.Values = (
+        446.484375
+        1028.56770833333)
+      BandType = rbDetail
+      object QRLabel2: TQRLabel
+        Left = 41
+        Top = 2
+        Width = 26
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          135.598958333333
+          6.61458333333333
+          85.9895833333333)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Clave'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 9
+      end
+      object QRDBText2: TQRDBText
+        Left = 41
+        Top = 13
+        Width = 88
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          135.598958333333
+          42.9947916666667
+          291.041666666667)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = False
+        Color = clWhite
+        DataSet = qyPedidoPartidas
+        DataField = 'R_CLAVE'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 9
+      end
+      object QRLabel3: TQRLabel
+        Left = 1
+        Top = 24
+        Width = 38
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          3.30729166666667
+          79.375
+          125.677083333333)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Material'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 9
+      end
+      object QRDBText3: TQRDBText
+        Left = 1
+        Top = 35
+        Width = 208
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          3.30729166666667
+          115.755208333333
+          687.916666666667)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = False
+        Color = clWhite
+        DataSet = qyPedidoPartidas
+        DataField = 'R_DESCRIPCION'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 9
+      end
+      object QRLabel30: TQRLabel
+        Left = 1
+        Top = 47
+        Width = 93
+        Height = 16
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          52.9166666666667
+          3.30729166666667
+          155.442708333333
+          307.578125)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Observaciones'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold, fsUnderline]
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 12
+      end
+      object qrImagen: TQRImage
+        Left = 210
+        Top = 29
+        Width = 97
+        Height = 103
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          340.651041666667
+          694.53125
+          95.9114583333333
+          320.807291666667)
+        Stretch = True
+      end
+      object QRDBText27: TQRDBText
+        Left = 1
+        Top = 75
+        Width = 208
+        Height = 57
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          188.515625
+          3.30729166666667
+          248.046875
+          687.916666666667)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = False
+        Color = clWhite
+        DataSet = qyPedidoPartidas
+        DataField = 'R_MATERIAL_OBSERVACIONES'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 9
+      end
+      object QRLabel4: TQRLabel
+        Left = 210
+        Top = 2
+        Width = 97
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          694.53125
+          6.61458333333333
+          320.807291666667)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = False
+        Caption = 'Codigo Barras'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 9
+      end
+      object QRDBText1: TQRDBText
+        Left = 210
+        Top = 13
+        Width = 97
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          694.53125
+          42.9947916666667
+          320.807291666667)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = False
+        Color = clWhite
+        DataSet = qyPedidoPartidas
+        DataField = 'R_MATERIAL_CBARRAS'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 9
+      end
+      object QRLabel5: TQRLabel
+        Left = 131
+        Top = 2
+        Width = 22
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          433.255208333333
+          6.61458333333333
+          72.7604166666667)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = False
+        Caption = 'PxC'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = True
+        WordWrap = False
+        FontSize = 9
+      end
+      object QRDBText4: TQRDBText
+        Left = 131
+        Top = 13
+        Width = 22
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          433.255208333333
+          42.9947916666667
+          72.7604166666667)
+        Alignment = taCenter
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = False
+        Color = clWhite
+        DataSet = qyPedidoPartidas
+        DataField = 'R_PZAS_X_CAJA'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = True
+        WordWrap = False
+        FontSize = 9
+      end
+      object QRDBText5: TQRDBText
+        Left = 1
+        Top = 62
+        Width = 208
+        Height = 15
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          49.609375
+          3.30729166666667
+          205.052083333333
+          687.916666666667)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = False
+        Color = clWhite
+        DataSet = qyPedidoPartidas
+        DataField = 'R_COMENTARIO'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 11
+      end
+      object QRShape1: TQRShape
+        Left = 0
+        Top = -2
+        Width = 296
+        Height = 6
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          19.84375
+          0
+          -6.61458333333333
+          978.958333333333)
+        Pen.Style = psDot
+        Shape = qrsHorLine
+        VertAdjust = 0
+      end
+      object QRShape2: TQRShape
+        Left = 307
+        Top = 0
+        Width = 4
+        Height = 135
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          446.484375
+          1015.33854166667
+          0
+          13.2291666666667)
+        Pen.Style = psDot
+        Shape = qrsVertLine
+        VertAdjust = 0
+      end
+      object QRLabel9: TQRLabel
+        Left = 1
+        Top = 2
+        Width = 22
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          3.30729166666667
+          6.61458333333333
+          72.7604166666667)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = True
+        AutoStretch = False
+        Caption = 'Part.'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 9
+      end
+      object QRDBText6: TQRDBText
+        Left = 1
+        Top = 13
+        Width = 37
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          3.30729166666667
+          42.9947916666667
+          122.369791666667)
+        Alignment = taLeftJustify
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = False
+        Color = clWhite
+        DataSet = qyPedidoPartidas
+        DataField = 'R_ROWS'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 9
+      end
+      object QRLabel10: TQRLabel
+        Left = 154
+        Top = 2
+        Width = 55
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          509.322916666667
+          6.61458333333333
+          181.901041666667)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = False
+        Caption = 'Precio'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 9
+      end
+      object QRDBText7: TQRDBText
+        Left = 154
+        Top = 13
+        Width = 55
+        Height = 13
+        Frame.Color = clBlack
+        Frame.DrawTop = False
+        Frame.DrawBottom = False
+        Frame.DrawLeft = False
+        Frame.DrawRight = False
+        Size.Values = (
+          42.9947916666667
+          509.322916666667
+          42.9947916666667
+          181.901041666667)
+        Alignment = taRightJustify
+        AlignToBand = False
+        AutoSize = False
+        AutoStretch = False
+        Color = clWhite
+        DataSet = qyPedidoPartidas
+        DataField = 'R_PRECIO'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = True
+        WordWrap = True
+        FontSize = 9
+      end
+    end
+  end
+  object Button1: TButton
+    Left = 352
+    Top = 24
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object qyPedidoPartidas: TIBQuery
+    Database = dmIBModulo.ibSistema
+    Transaction = dmIBModulo.ibSistemaTransaccion
+    SQL.Strings = (
+      'SELECT *'
+      'FROM PEDIDOS_PARTIDAS(:P_PEDIDO)')
+    Left = 8
+    Top = 8
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'P_PEDIDO'
+        ParamType = ptUnknown
+        Value = '669'
+      end>
+    object qyPedidoPartidasR_ID: TIntegerField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_ID'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_PEDIDO: TIntegerField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_PEDIDO'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_MATERIAL: TIntegerField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_MATERIAL'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_CLAVE: TIBStringField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_CLAVE'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_DESCRIPCION: TIBStringField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_DESCRIPCION'
+      ReadOnly = True
+      Size = 100
+    end
+    object qyPedidoPartidasR_UNIDAD: TIntegerField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_UNIDAD'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_DESCRIPCION_UNIDAD: TIBStringField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_DESCRIPCION_UNIDAD'
+      ReadOnly = True
+      Size = 50
+    end
+    object qyPedidoPartidasR_CANTIDAD: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_CANTIDAD'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_CANTIDAD_ENTREGADA: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_CANTIDAD_ENTREGADA'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_PRECIO: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_PRECIO'
+      ReadOnly = True
+      DisplayFormat = '###,###,##0.00'
+    end
+    object qyPedidoPartidasR_SUBTOTAL: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_SUBTOTAL'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_IVA: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_IVA'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_IEPS: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_IEPS'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_IMPUESTO1: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_IMPUESTO1'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_IMPUESTO2: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_IMPUESTO2'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_TOTAL: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_TOTAL'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_DESCUENTO_PORC: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_DESCUENTO_PORC'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_DP: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_DP'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_DG: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_DG'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_GT: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_GT'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_ESTATUS: TIBStringField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_ESTATUS'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_COTIZACION: TIntegerField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_COTIZACION'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_CLAVE_COTIZACION: TIBStringField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_CLAVE_COTIZACION'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_PRECIO_SIN_IMPUESTOS: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_PRECIO_SIN_IMPUESTOS'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_CAJAS: TIntegerField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_CAJAS'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_ROWS: TIntegerField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_ROWS'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_IVA_PORC: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_IVA_PORC'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_IEPS_PORC: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_IEPS_PORC'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_IMPUESTO1_PORC: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_IMPUESTO1_PORC'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_IMPUESTO2_PORC: TFloatField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_IMPUESTO2_PORC'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_MATERIAL_CBARRAS: TIBStringField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_MATERIAL_CBARRAS'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_MATERIAL_OBSERVACIONES: TBlobField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_MATERIAL_OBSERVACIONES'
+      ReadOnly = True
+      BlobType = ftBlob
+      Size = 8
+    end
+    object qyPedidoPartidasR_MATERIAL_FOTO: TBlobField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_MATERIAL_FOTO'
+      ReadOnly = True
+      BlobType = ftBlob
+      Size = 8
+    end
+    object qyPedidoPartidasR_PZAS_X_CAJA: TIntegerField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_PZAS_X_CAJA'
+      ReadOnly = True
+    end
+    object qyPedidoPartidasR_COMENTARIO: TIBStringField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_COMENTARIO'
+      ReadOnly = True
+      Size = 50
+    end
+  end
+  object dsPedidoPartidas: TDataSource
+    DataSet = qyPedidoPartidas
+    Left = 40
+    Top = 8
+  end
+end

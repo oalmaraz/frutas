@@ -1,0 +1,56 @@
+inherited frmCapturar_transportistas: TfrmCapturar_transportistas
+  Left = 369
+  Top = 196
+  Caption = 'Transportistas'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited paLienzo: TPanel
+    inherited fpMasDatos: TPanel
+      Visible = False
+    end
+    inherited pcSujetos: TPageControl
+      inherited tsDatos: TTabSheet
+        inherited fpDatos: TPanel
+          inherited laCtaContable: TLabel
+            Top = 245
+          end
+          inherited buActCtas: TBitBtn
+            Left = 173
+            Top = 260
+          end
+          inherited buLimCtas: TBitBtn
+            Left = 196
+            Top = 260
+          end
+        end
+      end
+    end
+  end
+  inherited TCapturar: TIBTable
+    IndexFieldNames = 'ID'
+    MasterFields = 'R_ID'
+    MasterSource = frmExplorar_transportistas.dsFuente
+    TableName = 'SUJETOS_TRANSPORTISTAS'
+    object TCapturarID: TIntegerField [0]
+      FieldName = 'ID'
+      Required = True
+    end
+    object TCapturarSUJETO: TIntegerField [1]
+      FieldName = 'SUJETO'
+    end
+  end
+  inherited spID: TIBStoredProc
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'R_ID'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftString
+        Name = 'P_QUIEN'
+        ParamType = ptInput
+        Value = 'TRANSPORTISTAS'
+      end>
+  end
+end

@@ -1,0 +1,80 @@
+inherited frmExplorar_tentrega: TfrmExplorar_tentrega
+  Left = 344
+  Top = 50
+  Caption = 'Explorar Tiempos de Entrega'
+  ClientWidth = 667
+  ExplicitWidth = 320
+  ExplicitHeight = 240
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited fpPadre: TPanel
+    Width = 667
+    ExplicitWidth = 667
+    inherited Panel1: TPanel
+      Width = 667
+      ExplicitWidth = 667
+    end
+  end
+  inherited Panel2: TPanel
+    Width = 667
+    ExplicitWidth = 667
+  end
+  inherited dgExplorar: TDBGrid
+    Width = 667
+  end
+  inherited paExplorarBusqueda: TPanel
+    Width = 667
+    ExplicitWidth = 667
+  end
+  inherited qyExplorar: TIBQuery
+    SQL.Strings = (
+      
+        'SELECT E.ID R_ID, E.DESCRIPCION R_DESCRIPCION, E.PESO R_PESO, E.' +
+        'TARIFA R_TARIFA,'
+      '       U.CLAVE R_UNIDAD,'
+      '       M.CLAVE R_MONEDA,'
+      '       S.NOMBRE R_TRANSPORTISTA'
+      'FROM TIEMPOS_DE_ENTREGA E LEFT JOIN MONEDAS M ON E.MONEDA = M.ID'
+      
+        '                          LEFT JOIN UNIDADES U ON E.UNIDAD = U.I' +
+        'D'
+      
+        '                          LEFT JOIN SUJETOS_TRANSPORTISTAS T ON ' +
+        'E.TRANSPORTISTA = T.ID'
+      '                          LEFT JOIN SUJETOS S ON T.SUJETO = S.ID'
+      'WHERE (E.ID  > 0)')
+    object qyExplorarR_ID: TIntegerField
+      FieldName = 'R_ID'
+      Origin = 'TIEMPOS_DE_ENTREGA.ID'
+      Required = True
+    end
+    object qyExplorarR_DESCRIPCION: TIBStringField
+      FieldName = 'R_DESCRIPCION'
+      Origin = 'TIEMPOS_DE_ENTREGA.DESCRIPCION'
+      Size = 50
+    end
+    object qyExplorarR_PESO: TFloatField
+      FieldName = 'R_PESO'
+      Origin = 'TIEMPOS_DE_ENTREGA.PESO'
+    end
+    object qyExplorarR_TARIFA: TFloatField
+      FieldName = 'R_TARIFA'
+      Origin = 'TIEMPOS_DE_ENTREGA.TARIFA'
+    end
+    object qyExplorarR_UNIDAD: TIBStringField
+      FieldName = 'R_UNIDAD'
+      Origin = 'UNIDADES.CLAVE'
+      Size = 10
+    end
+    object qyExplorarR_MONEDA: TIBStringField
+      FieldName = 'R_MONEDA'
+      Origin = 'MONEDAS.CLAVE'
+      Size = 10
+    end
+    object qyExplorarR_TRANSPORTISTA: TIBStringField
+      FieldName = 'R_TRANSPORTISTA'
+      Origin = 'SUJETOS.NOMBRE'
+      Size = 100
+    end
+  end
+end

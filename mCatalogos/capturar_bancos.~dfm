@@ -1,0 +1,587 @@
+inherited frmCapturar_bancos: TfrmCapturar_bancos
+  Left = 410
+  Top = 159
+  Caption = 'Bancos'
+  ClientHeight = 532
+  ClientWidth = 696
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited paLienzo: TPanel
+    Width = 696
+    Height = 450
+    inherited fpMasDatos: TPanel
+      Top = 344
+      Width = 692
+      Height = 104
+      inherited fpMasDatoDentro: TPanel
+        Width = 690
+        Height = 102
+        object Label12: TLabel
+          Left = 257
+          Top = 21
+          Width = 41
+          Height = 13
+          Caption = '&Sucursal'
+          FocusControl = deSucursal
+        end
+        object Label15: TLabel
+          Left = 3
+          Top = 60
+          Width = 73
+          Height = 13
+          Caption = 'Tipo de Cue&nta'
+        end
+        object Label14: TLabel
+          Left = 3
+          Top = 21
+          Width = 34
+          Height = 13
+          Caption = 'Cuenta'
+        end
+        object Label13: TLabel
+          Left = 522
+          Top = 21
+          Width = 39
+          Height = 13
+          Caption = '&Moneda'
+          FocusControl = leMoneda
+        end
+        object sbRefreshTipo: TSpeedButton
+          Left = 265
+          Top = 76
+          Width = 21
+          Height = 21
+          Hint = 'Actualizar'
+          Glyph.Data = {
+            36050000424D3605000000000000360400002800000010000000100000000100
+            08000000000000010000130B0000130B00000001000000010000F0F0F0000E10
+            100000000000B2B2B200303030008D9E8F00C4E9CC0028292900A1A1A1005151
+            5100748D77009CD5A3008CBE8C0040404000818181006061600037373700AFD7
+            B20080B68000415A4000C1C1C100B7E0BD0062756400D0D0D0002020200078AD
+            72009BC29E0066A56500569B4F003F793300171A1B0048484700E1E1E1007070
+            7000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            00000000000000000000000000000000000000000000000000000B0B0B0E0208
+            0B0B0B0B0B0B0B0B0B0B0B0B0B210A07080B0B0B0B0B0B0B0B0B0B0B0B201E15
+            07030B0B0B0B0B0B0B0B0B0B0B0B090C1A1E170B0B0B0B0B0B0B0B0B0B0B141F
+            061D1E170B0B0B0B0B0B0B0B0B0B0B18110C1D1E170B0B0B0B0B0B0B0B0B0B08
+            0F151C1D1E170B0B0B0B040202020202011C1C1C1D1E170B0B0B00181A060C12
+            19191B1B1C1D1E170B0B0B171811150C1219190C06061A04000B0B0B14071515
+            0C1216020202020204000B0B0B081006110C12130F0B0B0B0B0B0B0B0B0B0F09
+            060B0C0C0D0F0B0B0B0B0B0B0B0B0B090A060B0C0C0D0E0B0B0B0B0B0B0B0B00
+            04050606060607080B0B0B0B0B0B0B0B0001020202020202030B}
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = sbRefreshTipoClick
+        end
+        object sbRefreshMoneda: TSpeedButton
+          Left = 624
+          Top = 37
+          Width = 21
+          Height = 21
+          Hint = 'Actualizar'
+          Glyph.Data = {
+            36050000424D3605000000000000360400002800000010000000100000000100
+            08000000000000010000130B0000130B00000001000000010000F0F0F0000E10
+            100000000000B2B2B200303030008D9E8F00C4E9CC0028292900A1A1A1005151
+            5100748D77009CD5A3008CBE8C0040404000818181006061600037373700AFD7
+            B20080B68000415A4000C1C1C100B7E0BD0062756400D0D0D0002020200078AD
+            72009BC29E0066A56500569B4F003F793300171A1B0048484700E1E1E1007070
+            7000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            00000000000000000000000000000000000000000000000000000B0B0B0E0208
+            0B0B0B0B0B0B0B0B0B0B0B0B0B210A07080B0B0B0B0B0B0B0B0B0B0B0B201E15
+            07030B0B0B0B0B0B0B0B0B0B0B0B090C1A1E170B0B0B0B0B0B0B0B0B0B0B141F
+            061D1E170B0B0B0B0B0B0B0B0B0B0B18110C1D1E170B0B0B0B0B0B0B0B0B0B08
+            0F151C1D1E170B0B0B0B040202020202011C1C1C1D1E170B0B0B00181A060C12
+            19191B1B1C1D1E170B0B0B171811150C1219190C06061A04000B0B0B14071515
+            0C1216020202020204000B0B0B081006110C12130F0B0B0B0B0B0B0B0B0B0F09
+            060B0C0C0D0F0B0B0B0B0B0B0B0B0B090A060B0C0C0D0E0B0B0B0B0B0B0B0B00
+            04050606060607080B0B0B0B0B0B0B0B0001020202020202030B}
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = sbRefreshMonedaClick
+        end
+        object deSucursal: TDBEdit
+          Left = 257
+          Top = 37
+          Width = 260
+          Height = 21
+          DataField = 'SUCURSAL'
+          DataSource = dsFuente
+          TabOrder = 1
+        end
+        object deCuenta: TDBEdit
+          Left = 3
+          Top = 37
+          Width = 249
+          Height = 21
+          DataField = 'CUENTA'
+          DataSource = dsFuente
+          TabOrder = 0
+        end
+        object leMoneda: TDBLookupComboBox
+          Left = 522
+          Top = 37
+          Width = 100
+          Height = 21
+          DataField = 'descripcion_moneda'
+          DataSource = dsFuente
+          TabOrder = 2
+        end
+        object cbActivarEnPVta: TDBCheckBox
+          Left = 290
+          Top = 76
+          Width = 104
+          Height = 17
+          Caption = 'Activar en P.Vta'
+          DataField = 'ACTIVAR_EN_PVTA'
+          DataSource = dsFuente
+          TabOrder = 3
+          ValueChecked = 'Si'
+          ValueUnchecked = 'No'
+        end
+        object cbActivarPagosCXC: TDBCheckBox
+          Left = 399
+          Top = 76
+          Width = 104
+          Height = 17
+          Caption = 'Activar en CXC'
+          DataField = 'ACTIVAR_PAGOS_CXC'
+          DataSource = dsFuente
+          TabOrder = 5
+          ValueChecked = 'Si'
+          ValueUnchecked = 'No'
+        end
+        object cbActivarPagosCXP: TDBCheckBox
+          Left = 508
+          Top = 76
+          Width = 104
+          Height = 17
+          Caption = 'Activar en CXP'
+          DataField = 'ACTIVAR_PAGOS_CXP'
+          DataSource = dsFuente
+          TabOrder = 4
+          ValueChecked = 'Si'
+          ValueUnchecked = 'No'
+        end
+      end
+    end
+    inherited pcSujetos: TPageControl
+      Width = 692
+      Height = 342
+      ActivePage = tsContactos
+      inherited tsDatos: TTabSheet
+        inherited fpDatos: TPanel
+          Width = 684
+          Height = 294
+          inherited Label10: TLabel
+            Top = 157
+          end
+          inherited Label11: TLabel
+            Top = 199
+          end
+          inherited laCtaContable: TLabel
+            Top = 239
+          end
+          inherited peFacturar: TDBComboBox
+            Top = 91
+          end
+          inherited peSexo: TDBComboBox
+            Top = 91
+          end
+          inherited deRazon: TDBEdit
+            Top = 91
+          end
+          inherited dmObservaciones: TDBMemo
+            Height = 134
+          end
+          inherited dgTelefonos: TDBGrid
+            Top = 157
+            Height = 108
+          end
+          inherited deWeb: TDBEdit
+            Top = 215
+          end
+          inherited deEMail: TDBEdit
+            Top = 173
+          end
+          inherited buActCtas: TBitBtn
+            Left = 173
+            Top = 254
+          end
+          inherited buLimCtas: TBitBtn
+            Left = 196
+            Top = 254
+          end
+        end
+      end
+      inherited tsDomicilio: TTabSheet
+        inherited fpDomicilio: TPanel
+          Width = 684
+          Height = 294
+        end
+      end
+      inherited tsContactos: TTabSheet
+        inherited paContactos: TPanel
+          Width = 499
+          Height = 236
+        end
+        inherited fpContacto: TPanel
+          Width = 684
+          inherited fpContactos: TPanel
+            Width = 684
+          end
+        end
+        inherited fpContactosDetalle: TPanel
+          Height = 236
+          inherited dgContactos: TDBGrid
+            Height = 236
+          end
+          inherited fcStatusBar1: TPanel
+            Top = 214
+          end
+        end
+      end
+    end
+  end
+  inherited fpPadre: TPanel
+    Width = 696
+    inherited Panel1: TPanel
+      Width = 696
+    end
+  end
+  inherited Panel2: TPanel
+    Top = 510
+    Width = 696
+  end
+  inherited dsFuente: TDataSource
+    Left = 480
+    Top = 312
+  end
+  inherited TCapturar: TIBTable
+    FieldDefs = <
+      item
+        Name = 'ID'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'SUJETO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'SUCURSAL'
+        DataType = ftString
+        Size = 50
+      end
+      item
+        Name = 'CUENTA'
+        DataType = ftString
+        Size = 50
+      end
+      item
+        Name = 'MONEDA'
+        DataType = ftInteger
+      end
+      item
+        Name = 'TIPO_CTA'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ACTIVAR_EN_PVTA'
+        DataType = ftString
+        Size = 2
+      end
+      item
+        Name = 'ACTIVAR_PAGOS_CXC'
+        DataType = ftString
+        Size = 2
+      end
+      item
+        Name = 'ACTIVAR_PAGOS_CXP'
+        DataType = ftString
+        Size = 2
+      end>
+    IndexDefs = <
+      item
+        Name = 'RDB$PRIMARY12'
+        Fields = 'ID'
+        Options = [ixPrimary, ixUnique]
+      end
+      item
+        Name = 'RDB$FOREIGN13'
+        Fields = 'SUJETO'
+      end
+      item
+        Name = 'RDB$FOREIGN14'
+        Fields = 'MONEDA'
+      end
+      item
+        Name = 'RDB$FOREIGN15'
+        Fields = 'TIPO_CTA'
+      end>
+    IndexFieldNames = 'ID'
+    MasterFields = 'R_ID'
+    StoreDefs = True
+    TableName = 'SUJETOS_BANCOS'
+    Left = 448
+    Top = 312
+    object TCapturarID: TIntegerField
+      FieldName = 'ID'
+      Required = True
+    end
+    object TCapturarSUJETO: TIntegerField
+      FieldName = 'SUJETO'
+    end
+    object TCapturarSUCURSAL: TIBStringField
+      FieldName = 'SUCURSAL'
+      Size = 50
+    end
+    object TCapturarCUENTA: TIBStringField
+      FieldName = 'CUENTA'
+      Size = 50
+    end
+    object TCapturarMONEDA: TIntegerField
+      FieldName = 'MONEDA'
+    end
+    object TCapturarTIPO_CTA: TIntegerField
+      FieldName = 'TIPO_CTA'
+    end
+    object TCapturarACTIVAR_EN_PVTA: TIBStringField
+      FieldName = 'ACTIVAR_EN_PVTA'
+      Size = 2
+    end
+    object TCapturarACTIVAR_PAGOS_CXC: TIBStringField
+      FieldName = 'ACTIVAR_PAGOS_CXC'
+      Size = 2
+    end
+    object TCapturarACTIVAR_PAGOS_CXP: TIBStringField
+      FieldName = 'ACTIVAR_PAGOS_CXP'
+      Size = 2
+    end
+    object TCapturarnombre_cuenta: TStringField
+      FieldKind = fkLookup
+      FieldName = 'nombre_cuenta'
+      LookupDataSet = TTipo_de_cuentas
+      LookupKeyFields = 'ID'
+      LookupResultField = 'NOMBRE'
+      KeyFields = 'TIPO_CTA'
+      Size = 50
+      Lookup = True
+    end
+    object TCapturardescripcion_moneda: TStringField
+      FieldKind = fkLookup
+      FieldName = 'descripcion_moneda'
+      LookupDataSet = TMonedas
+      LookupKeyFields = 'ID'
+      LookupResultField = 'DESCRIPCION'
+      KeyFields = 'MONEDA'
+      Size = 50
+      Lookup = True
+    end
+  end
+  inherited spID: TIBStoredProc
+    Left = 416
+    Top = 312
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'R_ID'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftString
+        Name = 'P_QUIEN'
+        ParamType = ptInput
+        Value = 'BANCOS'
+      end>
+  end
+  inherited TSujetos: TIBTable
+    Left = 448
+    Top = 343
+  end
+  inherited dsSujetos: TDataSource
+    Left = 480
+    Top = 343
+  end
+  inherited TTelefonos: TIBTable
+    Left = 512
+    Top = 343
+  end
+  inherited dsTelefonos: TDataSource
+    Left = 544
+    Top = 343
+  end
+  inherited TDomicilios: TIBTable
+    Left = 448
+    Top = 373
+  end
+  inherited dsDomicilios: TDataSource
+    Left = 480
+    Top = 373
+  end
+  inherited TContactos: TIBTable
+    Left = 320
+    Top = 372
+  end
+  inherited dsContactos: TDataSource
+    Left = 352
+    Top = 372
+  end
+  inherited TTelefonosContactos: TIBTable
+    Left = 384
+    Top = 372
+  end
+  inherited dsTelefonosContactos: TDataSource
+    Left = 416
+    Top = 372
+  end
+  inherited qyCiudades: TIBQuery
+    Left = 512
+    Top = 373
+  end
+  inherited dsCiudades: TDataSource
+    Left = 544
+    Top = 373
+  end
+  inherited spIDContactos: TIBStoredProc
+    Left = 544
+    Top = 312
+  end
+  inherited spAUTO_FOLIO: TIBStoredProc
+    Left = 136
+    Top = 360
+  end
+  inherited idClave: TInputData
+    Left = 169
+    Top = 360
+  end
+  inherited spMODIFICAR_FOLIO: TIBStoredProc
+    Left = 104
+    Top = 360
+  end
+  object TMonedas: TIBTable
+    Database = dmIBModulo.ibSistema
+    Transaction = dmIBModulo.ibSistemaTransaccion
+    FieldDefs = <
+      item
+        Name = 'ID'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'CLAVE'
+        DataType = ftString
+        Size = 10
+      end
+      item
+        Name = 'DESCRIPCION'
+        DataType = ftString
+        Size = 50
+      end
+      item
+        Name = 'FECHA_ULT_ACT'
+        DataType = ftDateTime
+      end
+      item
+        Name = 'PARIDAD'
+        DataType = ftFloat
+      end>
+    IndexDefs = <
+      item
+        Name = 'RDB$PRIMARY10'
+        Fields = 'ID'
+        Options = [ixPrimary, ixUnique]
+      end>
+    StoreDefs = True
+    TableName = 'MONEDAS'
+    Left = 256
+    Top = 373
+  end
+  object dsMonedas: TDataSource
+    DataSet = TMonedas
+    Left = 288
+    Top = 373
+  end
+  object TTipo_de_cuentas: TIBTable
+    Database = dmIBModulo.ibSistema
+    Transaction = dmIBModulo.ibSistemaTransaccion
+    FieldDefs = <
+      item
+        Name = 'ID'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'NOMBRE'
+        DataType = ftString
+        Size = 50
+      end>
+    IndexDefs = <
+      item
+        Name = 'RDB$PRIMARY11'
+        Fields = 'ID'
+        Options = [ixPrimary, ixUnique]
+      end>
+    StoreDefs = True
+    TableName = 'TIPO_DE_CUENTAS'
+    Left = 128
+    Top = 117
+  end
+  object dsTipo_de_cuentas: TDataSource
+    DataSet = TTipo_de_cuentas
+    Left = 160
+    Top = 117
+  end
+end

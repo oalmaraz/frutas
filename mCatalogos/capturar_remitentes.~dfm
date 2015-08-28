@@ -1,0 +1,218 @@
+inherited frmCapturar_remitentes: TfrmCapturar_remitentes
+  Left = 322
+  Top = 167
+  Caption = 'Remitentes'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited paLienzo: TPanel
+    inherited fpMasDatos: TPanel
+      Top = 456
+      Height = 67
+      inherited fpMasDatoDentro: TPanel
+        Height = 65
+        object Label12: TLabel
+          Left = 6
+          Top = 21
+          Width = 48
+          Height = 13
+          Caption = 'E&nviar por'
+          FocusControl = leEnviar
+        end
+        object sbRefreshEnviarPor: TSpeedButton
+          Left = 210
+          Top = 37
+          Width = 21
+          Height = 21
+          Hint = 'Actualizar'
+          Glyph.Data = {
+            36050000424D3605000000000000360400002800000010000000100000000100
+            08000000000000010000130B0000130B00000001000000010000F0F0F0000E10
+            100000000000B2B2B200303030008D9E8F00C4E9CC0028292900A1A1A1005151
+            5100748D77009CD5A3008CBE8C0040404000818181006061600037373700AFD7
+            B20080B68000415A4000C1C1C100B7E0BD0062756400D0D0D0002020200078AD
+            72009BC29E0066A56500569B4F003F793300171A1B0048484700E1E1E1007070
+            7000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+            FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            00000000000000000000000000000000000000000000000000000B0B0B0E0208
+            0B0B0B0B0B0B0B0B0B0B0B0B0B210A07080B0B0B0B0B0B0B0B0B0B0B0B201E15
+            07030B0B0B0B0B0B0B0B0B0B0B0B090C1A1E170B0B0B0B0B0B0B0B0B0B0B141F
+            061D1E170B0B0B0B0B0B0B0B0B0B0B18110C1D1E170B0B0B0B0B0B0B0B0B0B08
+            0F151C1D1E170B0B0B0B040202020202011C1C1C1D1E170B0B0B00181A060C12
+            19191B1B1C1D1E170B0B0B171811150C1219190C06061A04000B0B0B14071515
+            0C1216020202020204000B0B0B081006110C12130F0B0B0B0B0B0B0B0B0B0F09
+            060B0C0C0D0F0B0B0B0B0B0B0B0B0B090A060B0C0C0D0E0B0B0B0B0B0B0B0B00
+            04050606060607080B0B0B0B0B0B0B0B0001020202020202030B}
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = sbRefreshEnviarPorClick
+        end
+        object leEnviar: TDBLookupComboBox
+          Left = 6
+          Top = 37
+          Width = 201
+          Height = 21
+          DataField = 'clave'
+          DataSource = dsFuente
+          TabOrder = 0
+        end
+      end
+    end
+    inherited pcSujetos: TPageControl
+      Height = 454
+      inherited tsDatos: TTabSheet
+        inherited fpDatos: TPanel
+          Height = 406
+          inherited laCtaContable: TLabel
+            Top = 245
+          end
+          inherited buActCtas: TBitBtn
+            Left = 173
+            Top = 260
+          end
+          inherited buLimCtas: TBitBtn
+            Left = 196
+            Top = 260
+          end
+        end
+      end
+      inherited tsDomicilio: TTabSheet
+        inherited fpDomicilio: TPanel
+          Height = 406
+        end
+      end
+      inherited tsContactos: TTabSheet
+        inherited paContactos: TPanel
+          Height = 240
+        end
+        inherited fpContactosDetalle: TPanel
+          Height = 240
+        end
+      end
+    end
+  end
+  inherited TCapturar: TIBTable
+    FieldDefs = <
+      item
+        Name = 'ID'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'SUJETO'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ENVIAR_POR'
+        DataType = ftInteger
+      end>
+    IndexDefs = <
+      item
+        Name = 'RDB$PRIMARY68'
+        Fields = 'ID'
+        Options = [ixPrimary, ixUnique]
+      end
+      item
+        Name = 'RDB$FOREIGN69'
+        Fields = 'SUJETO'
+      end
+      item
+        Name = 'RDB$FOREIGN70'
+        Fields = 'ENVIAR_POR'
+      end>
+    IndexFieldNames = 'ID'
+    MasterFields = 'R_ID'
+    MasterSource = frmExplorar_remitentes.dsFuente
+    StoreDefs = True
+    TableName = 'SUJETOS_REMITENTES'
+    object TCapturarID: TIntegerField
+      FieldName = 'ID'
+      Required = True
+    end
+    object TCapturarSUJETO: TIntegerField
+      FieldName = 'SUJETO'
+    end
+    object TCapturarENVIAR_POR: TIntegerField
+      FieldName = 'ENVIAR_POR'
+    end
+    object TCapturarclave: TStringField
+      FieldKind = fkLookup
+      FieldName = 'clave'
+      LookupDataSet = qyTransportistas
+      LookupKeyFields = 'R_ID'
+      LookupResultField = 'R_CLAVE'
+      KeyFields = 'ENVIAR_POR'
+      Size = 50
+      Lookup = True
+    end
+  end
+  inherited spID: TIBStoredProc
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'R_ID'
+        ParamType = ptOutput
+      end
+      item
+        DataType = ftString
+        Name = 'P_QUIEN'
+        ParamType = ptInput
+        Value = 'REMITENTES'
+      end>
+  end
+  object dsTransportistas: TDataSource
+    DataSet = qyTransportistas
+    Left = 128
+    Top = 77
+  end
+  object qyTransportistas: TIBQuery
+    Database = dmIBModulo.ibSistema
+    Transaction = dmIBModulo.ibSistemaTransaccion
+    SQL.Strings = (
+      'SELECT *'
+      'FROM TRANSPORTISTAS')
+    Left = 96
+    Top = 77
+    object qyTransportistasR_ID: TIntegerField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_ID'
+      ReadOnly = True
+    end
+    object qyTransportistasR_CLAVE: TIBStringField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_CLAVE'
+      ReadOnly = True
+      Size = 50
+    end
+    object qyTransportistasR_NOMBRE: TIBStringField
+      FieldKind = fkInternalCalc
+      FieldName = 'R_NOMBRE'
+      ReadOnly = True
+      Size = 100
+    end
+  end
+end
