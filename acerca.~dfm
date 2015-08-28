@@ -1,0 +1,155 @@
+object frmAcerca: TfrmAcerca
+  Left = 424
+  Top = 238
+  BorderStyle = bsNone
+  Caption = 'Acerca...'
+  ClientHeight = 384
+  ClientWidth = 433
+  Color = clWhite
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object dtNombre: TDBText
+    Left = 11
+    Top = 46
+    Width = 271
+    Height = 17
+    DataField = 'NOMBRE'
+    DataSource = dmIBData.dsPreferencias
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
+    Transparent = True
+  end
+  object Label3: TLabel
+    Left = 11
+    Top = 67
+    Width = 40
+    Height = 16
+    Caption = 'version'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
+    Transparent = True
+  end
+  object laVersion: TLabel
+    Left = 59
+    Top = 67
+    Width = 29
+    Height = 16
+    Caption = '0.0.0'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
+    Transparent = True
+  end
+  object Label12: TLabel
+    Left = 8
+    Top = 322
+    Width = 409
+    Height = 49
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 
+      'Todos los derechos reservados, AWR Software, S.A. de C.V.'#13#10'Este ' +
+      'programa esta protegido por las leyes de derechos de autor.'#13#10'REG' +
+      '. 2005-101815164800-01'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
+    Transparent = True
+  end
+  object fcLabel1: TLabel
+    Left = 11
+    Top = 11
+    Width = 119
+    Height = 33
+    Caption = 'APM/ERP'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -24
+    Font.Name = 'Arial Black'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Transparent = True
+  end
+  object ibCerrar: TfcImageBtn
+    Left = 409
+    Top = 5
+    Width = 18
+    Height = 16
+    Color = clNone
+    DitherColor = clWhite
+    DitherStyle = dsDither
+    Image.Data = {
+      424DB60300000000000036000000280000001200000010000000010018000000
+      0000800300000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000033222B271A2122171D20151B1F151A1F151A
+      1F151A1F151A1F151A1F151A1F151A1F151A1F151A1F151A1F151A1E14191D13
+      18120C0F00006C495D583B4C4F354449313F48303E48303E48303E48303E4830
+      3E48303E48303E48303E48303E48303E47303D422C393C283322171D0000A46F
+      8D895D777E556D754F65734E63734E63734E63734E63734E63734E63734E6373
+      4E63734E63734E63714C6269475A5C3E4F33222C0000AE7698936481885C767F
+      566FA98F9FFFFFFFD4C7CF7D556D7D556D7D556D7D556DD8CCD3FFFFFFA98F9F
+      7A536A714D6262435636242F0000B97DA39D6A8A90627F875B77855A75C2ACBA
+      FFFFFFBEA7B5855A75855A75C2ACBAFFFFFFC2ACBA855A7581577278516A6847
+      5C3927320000C684ADA870929A678790607E8E5F7C8E5F7CD8C8D2FDFCFDAC89
+      9EAF8EA3FFFFFFD8C8D28E5F7C8E5F7C8A5C79805670704A613D29350000CE8B
+      B7AF769BA16C8E966585946483946483996B88E9DFE6F7F3F5FAF8F9EBE2E899
+      6B8894648394648390617F865A76744E67402B380000DB92C0B97CA3AB7296A0
+      6B8C9D698A9D698A9D698AB187A1FFFFFFFFFFFFB187A19D698A9D698A9D698A
+      9966868E5F7D7B526C442D3B0000E598CAC281ABB2769EA76F93A46D91A46D91
+      A87396EEE4EAF6F1F5F5EFF3ECE1E9A87396A46D91A46D91A06A8D9462838156
+      72472F3E0000EF9FD4CA86B3BA7CA5AE749AAB7298AB7298E5D3DFFEFDFDC197
+      B3BC8EADFEFDFDE6D5E0AC7499AB7298A66F949A67898659774A31410000F7A5
+      DCD18BBBC080ACB478A1B1769ED8BACEFFFFFFD5B6CBB1769EB1769ED2AFC7FF
+      FFFFDEC5D6B1769EAC739AA06A8F8B5D7C4C33440000FFABE8DC91C4CB85B5BF
+      7EAAD3A9C6FFFFFFEAD6E4BC7CA8BC7CA8BC7CA8BC7CA8E8D2E1FDFBFCD2A7C4
+      B779A3AA709894628453364A0000FFB3F3E99BD2DC92C6D18BBCD08ABBD08ABB
+      D08ABBD08ABBD08ABBD08ABBD08ABBD08ABBD08ABBD08ABBCD88B8BD7EAAA56E
+      955D3E530000FFBAFDF5A3DDF0A0D9EA9CD4E99BD2E99BD2E99BD2E99BD2E99B
+      D2E99BD2E99BD2E99BD2E99BD2E99BD2E699CFD990C4C180AF724C670000FFC5
+      FFFFBEFFFFBDFFFFBCFFFFBBFFFFBBFFFFBBFFFFBBFFFFBBFFFFBBFFFFBBFFFF
+      BBFFFFBBFFFFBBFFFFBBFFFFB6F8FFADECC07FAE0000}
+    ParentClipping = False
+    ShadeStyle = fbsNormal
+    TabOrder = 0
+    TextOptions.Alignment = taCenter
+    TextOptions.VAlignment = vaVCenter
+    TransparentColor = clNone
+    OnClick = ibCerrarClick
+    RegionData = {
+      4000000020000000010000000200000020000000000000000000000012000000
+      1000000001000000000000001200000001000000000000000100000012000000
+      10000000}
+    DownRegionData = {00000000}
+  end
+  object buColaboradores: TBitBtn
+    Left = 320
+    Top = 280
+    Width = 97
+    Height = 25
+    Caption = 'Colaboradores'
+    TabOrder = 1
+  end
+end

@@ -1,0 +1,28 @@
+unit explorarMDI;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  explorar, Menus, XPMenu, dxPSCore, Db, IBCustomDataSet, IBQuery,
+  Mensajes, dxCntner, dxEditor, dxEdLib, fcLabel, StdCtrls, dxTL, dxDBCtrl,
+  dxDBGrid, Mask, DBCtrls, fcStatusBar, fcButton, fcImgBtn, JvComponent,
+  JvArrowBtn, jpeg, fcImager, ExtCtrls, FashionPanel, dxExEdtr, ComCtrls,
+  Buttons, Grids, DBGrids;
+
+type
+  TfrmExplorarMDI = class(TfrmExplorar)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+{var
+  frmExplorarMDI: TfrmExplorarMDI;}
+
+implementation
+
+{$R *.DFM}
+
+end.

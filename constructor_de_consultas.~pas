@@ -1,0 +1,876 @@
+unit constructor_de_consultas;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  padre, ExtCtrls, JvSplitter, dxDBTLCl, dxGrClms, dxLayout, Menus,
+  Mensajes, InputData, Db, IBCustomDataSet, IBStoredProc, IBQuery, dxTL,
+  dxDBCtrl, dxDBGrid, dxCntner, dxExEdtr, dxExGrEd, dxExELib, fcButton,
+  fcImgBtn, dxEdLib, dxEditor, Buttons, StdCtrls, AHMTLeds, jpeg, fcImager,
+  FashionPanel;
+
+type
+  TfrmConstructor_de_consultas = class(TfrmPadre)
+    ledCampos: TAHMLed;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    meCampos: TdxMRUEdit;
+    ledSentencias: TAHMLed;
+    meSentencias: TdxMRUEdit;
+    ledValor: TAHMLed;
+    deValor: TdxEdit;
+    ledLogica: TAHMLed;
+    meLogica: TdxMRUEdit;
+    dsConstructor: TDataSource;
+    dsConstructor_Detalle: TDataSource;
+    FashionPanel1: TFashionPanel;
+    qyBorrarTemporales: TIBQuery;
+    qyVista: TIBQuery;
+    spADD_CONSTRUCTOR: TIBStoredProc;
+    spADD_CONSTRUCTOR_DETALLE: TIBStoredProc;
+    dsVista: TDataSource;
+    qyConstructor_Detalle: TIBQuery;
+    qyConstructor_DetalleID: TIntegerField;
+    qyConstructor_DetalleCONSTRUCTOR: TIntegerField;
+    qyConstructor_DetalleUSR_SENTENCIA: TIBStringField;
+    qyConstructor_DetalleUSR_LOGICA: TIBStringField;
+    qyConstructor_DetalleUSR_VALOR: TIBStringField;
+    qyConstructor_DetalleBD_SENTENCIA: TIBStringField;
+    qyConstructor_DetalleBD_LOGICA: TIBStringField;
+    qyConstructor_DetalleBD_VALOR: TIBStringField;
+    dgVista: TdxDBGrid;
+    spDEL_CONSTRUCTOR_DETALLE: TIBStoredProc;
+    dgVistaColumn1: TdxDBGridColumn;
+    dgVistaColumn2: TdxDBGridColumn;
+    dgVistaColumn3: TdxDBGridColumn;
+    dgVistaColumn4: TdxDBGridColumn;
+    dgVistaColumn5: TdxDBGridColumn;
+    dgVistaColumn6: TdxDBGridColumn;
+    dgVistaColumn7: TdxDBGridColumn;
+    dgVistaColumn8: TdxDBGridColumn;
+    dgVistaColumn9: TdxDBGridColumn;
+    dgVistaColumn10: TdxDBGridColumn;
+    dgVistaColumn11: TdxDBGridColumn;
+    dgVistaColumn12: TdxDBGridColumn;
+    dgVistaColumn13: TdxDBGridColumn;
+    dgVistaColumn14: TdxDBGridColumn;
+    dgVistaColumn15: TdxDBGridColumn;
+    dgVistaColumn16: TdxDBGridColumn;
+    dgVistaColumn17: TdxDBGridColumn;
+    dgVistaColumn18: TdxDBGridColumn;
+    dgVistaColumn19: TdxDBGridColumn;
+    dgVistaColumn20: TdxDBGridColumn;
+    qyConstructor: TIBQuery;
+    qyConstructorID: TIntegerField;
+    qyConstructorFORMA: TIBStringField;
+    qyConstructorNOMBRE: TIBStringField;
+    qyConstructorCONSULTA: TIBStringField;
+    qyConstructorTEMPORAL: TIBStringField;
+    qyConstructorUSUARIO: TIntegerField;
+    dgVistaColumn21: TdxDBGridColumn;
+    dgVistaColumn22: TdxDBGridColumn;
+    dgVistaColumn23: TdxDBGridColumn;
+    dgVistaColumn24: TdxDBGridColumn;
+    dgVistaColumn25: TdxDBGridColumn;
+    dgVistaColumn26: TdxDBGridColumn;
+    dgVistaColumn27: TdxDBGridColumn;
+    dgVistaColumn28: TdxDBGridColumn;
+    dgVistaColumn29: TdxDBGridColumn;
+    dgVistaColumn30: TdxDBGridColumn;
+    dgVistaColumn31: TdxDBGridColumn;
+    dgVistaColumn32: TdxDBGridColumn;
+    dgVistaColumn33: TdxDBGridColumn;
+    dgVistaColumn34: TdxDBGridColumn;
+    dgVistaColumn35: TdxDBGridColumn;
+    dgVistaColumn36: TdxDBGridColumn;
+    dgVistaColumn37: TdxDBGridColumn;
+    dgVistaColumn38: TdxDBGridColumn;
+    dgVistaColumn39: TdxDBGridColumn;
+    dgVistaColumn40: TdxDBGridColumn;
+    dgVistaColumn41: TdxDBGridColumn;
+    dgVistaColumn42: TdxDBGridColumn;
+    dgVistaColumn43: TdxDBGridColumn;
+    dgVistaColumn44: TdxDBGridColumn;
+    dgVistaColumn45: TdxDBGridColumn;
+    dgVistaColumn46: TdxDBGridColumn;
+    dgVistaColumn47: TdxDBGridColumn;
+    dgVistaColumn48: TdxDBGridColumn;
+    dgVistaColumn49: TdxDBGridColumn;
+    dgVistaColumn50: TdxDBGridColumn;
+    dgVistaColumn51: TdxDBGridColumn;
+    dgVistaColumn52: TdxDBGridColumn;
+    dgVistaColumn53: TdxDBGridColumn;
+    dgVistaColumn54: TdxDBGridColumn;
+    dgVistaColumn55: TdxDBGridColumn;
+    dgVistaColumn56: TdxDBGridColumn;
+    dgVistaColumn57: TdxDBGridColumn;
+    dgVistaColumn58: TdxDBGridColumn;
+    dgVistaColumn59: TdxDBGridColumn;
+    dgVistaColumn60: TdxDBGridColumn;
+    dgVistaColumn61: TdxDBGridColumn;
+    dgVistaColumn62: TdxDBGridColumn;
+    dgVistaColumn63: TdxDBGridColumn;
+    dgVistaColumn64: TdxDBGridColumn;
+    dgVistaColumn65: TdxDBGridColumn;
+    dgVistaColumn66: TdxDBGridColumn;
+    dgVistaColumn67: TdxDBGridColumn;
+    dgVistaColumn68: TdxDBGridColumn;
+    dgVistaColumn69: TdxDBGridColumn;
+    dgVistaColumn70: TdxDBGridColumn;
+    dgVistaColumn71: TdxDBGridColumn;
+    dgVistaColumn72: TdxDBGridColumn;
+    dgVistaColumn73: TdxDBGridColumn;
+    dgVistaColumn74: TdxDBGridColumn;
+    dgVistaColumn75: TdxDBGridColumn;
+    dgVistaColumn76: TdxDBGridColumn;
+    dgVistaColumn77: TdxDBGridColumn;
+    dgVistaColumn78: TdxDBGridColumn;
+    dgVistaColumn79: TdxDBGridColumn;
+    dgVistaColumn80: TdxDBGridColumn;
+    dgVistaColumn81: TdxDBGridColumn;
+    dgVistaColumn82: TdxDBGridColumn;
+    dgVistaColumn83: TdxDBGridColumn;
+    dgVistaColumn84: TdxDBGridColumn;
+    dgVistaColumn85: TdxDBGridColumn;
+    dgVistaColumn86: TdxDBGridColumn;
+    dgVistaColumn87: TdxDBGridColumn;
+    dgVistaColumn88: TdxDBGridColumn;
+    dgVistaColumn89: TdxDBGridColumn;
+    dgVistaColumn90: TdxDBGridColumn;
+    dgVistaColumn91: TdxDBGridColumn;
+    dgVistaColumn92: TdxDBGridColumn;
+    dgVistaColumn93: TdxDBGridColumn;
+    dgVistaColumn94: TdxDBGridColumn;
+    dgVistaColumn95: TdxDBGridColumn;
+    dgVistaColumn96: TdxDBGridColumn;
+    dgVistaColumn97: TdxDBGridColumn;
+    dgVistaColumn98: TdxDBGridColumn;
+    dgVistaColumn99: TdxDBGridColumn;
+    dgVistaColumn100: TdxDBGridColumn;
+    laY: TLabel;
+    deValorUno: TdxDateEdit;
+    deValorDos: TdxDateEdit;
+    Label5: TLabel;
+    qyAlmacenados: TIBQuery;
+    dsAlmacenados: TDataSource;
+    qyAlmacenadosID: TIntegerField;
+    qyAlmacenadosFORMA: TIBStringField;
+    qyAlmacenadosNOMBRE: TIBStringField;
+    qyAlmacenadosCONSULTA: TIBStringField;
+    qyAlmacenadosTEMPORAL: TIBStringField;
+    qyAlmacenadosUSUARIO: TIntegerField;
+    qyAlmacenadosDetalle: TIBQuery;
+    dsAlmacenadosDetalle: TDataSource;
+    qyAlmacenadosDetalleID: TIntegerField;
+    qyAlmacenadosDetalleCONSTRUCTOR: TIntegerField;
+    qyAlmacenadosDetalleUSR_SENTENCIA: TIBStringField;
+    qyAlmacenadosDetalleUSR_LOGICA: TIBStringField;
+    qyAlmacenadosDetalleUSR_VALOR: TIBStringField;
+    qyAlmacenadosDetalleBD_SENTENCIA: TIBStringField;
+    qyAlmacenadosDetalleBD_LOGICA: TIBStringField;
+    qyAlmacenadosDetalleBD_VALOR: TIBStringField;
+    idConstructor: TInputData;
+    meConstructor: TMensajes;
+    spACTUALIZA_CONSTRUCTOR: TIBStoredProc;
+    spCONSTRUCTOR_ELIMINAR: TIBStoredProc;
+    ibAgregar: TfcImageBtn;
+    ibGuardar: TfcImageBtn;
+    ibCancelar: TfcImageBtn;
+    ibEliminar: TfcImageBtn;
+    ibAplicar: TfcImageBtn;
+    ibVista: TfcImageBtn;
+    pmTeclas: TPopupMenu;
+    NuevaPartida1: TMenuItem;
+    ModificarPartida1: TMenuItem;
+    GuardarPartida1: TMenuItem;
+    CancelarPartida1: TMenuItem;
+    EliminarPartida1: TMenuItem;
+    Pedidos1: TMenuItem;
+    ibLimpiar: TfcImageBtn;
+    Limpiar1: TMenuItem;
+    dlAlmacenadas: TdxDBExtLookupEdit;
+    itemConstructor: TdxDBGridLayout;
+    dgLayout: TdxDBGridLayoutList;
+    sbConsultas: TSpeedButton;
+    qyConstructor_DetalleUSR_CAMPO: TIBStringField;
+    qyConstructor_DetalleBD_CAMPO: TIBStringField;
+    qyAlmacenadosDetalleUSR_CAMPO: TIBStringField;
+    qyAlmacenadosDetalleBD_CAMPO: TIBStringField;
+    paConsulta: TPanel;
+    dgDetalle: TdxDBGrid;
+    dgDetalleColumn5: TdxDBGridButtonColumn;
+    dgDetalleColumn4: TdxDBGridColumn;
+    dgDetalleColumn1: TdxDBGridColumn;
+    dgDetalleColumn2: TdxDBGridColumn;
+    dgDetalleColumn3: TdxDBGridColumn;
+    dxDBGrid1: TdxDBGrid;
+    dxDBGrid1Column1: TdxDBGridColumn;
+    dxDBGrid1Column2: TdxDBGridColumn;
+    JvSplitter1: TJvSplitter;
+    procedure dgDetalleKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure meSentenciasChange(Sender: TObject);
+    procedure deValorUnoExit(Sender: TObject);
+    procedure dgDetalleColumn5ButtonClick(Sender: TObject;
+      AbsoluteIndex: Integer);
+    procedure qyAlmacenadosAfterOpen(DataSet: TDataSet);
+    procedure ibAgregarClick(Sender: TObject);
+    procedure ibCancelarClick(Sender: TObject);
+    procedure ibVistaClick(Sender: TObject);
+    procedure ibAplicarClick(Sender: TObject);
+    procedure ibGuardarClick(Sender: TObject);
+    procedure ibEliminarClick(Sender: TObject);
+    procedure ibLimpiarClick(Sender: TObject);
+    procedure Limpiar1Click(Sender: TObject);
+    procedure NuevaPartida1Click(Sender: TObject);
+    procedure ModificarPartida1Click(Sender: TObject);
+    procedure GuardarPartida1Click(Sender: TObject);
+    procedure CancelarPartida1Click(Sender: TObject);
+    procedure EliminarPartida1Click(Sender: TObject);
+    procedure Pedidos1Click(Sender: TObject);
+    procedure sbConsultasClick(Sender: TObject);
+    procedure dlAlmacenadasChange(Sender: TObject);
+  private
+    { Private declarations }
+    forma    : string;
+    sql      : TStrings;
+    consulta : string;
+    select   : string;
+    tabla    : string;
+    where    : string;
+    procedure armar_sql(p_sql : TStrings);
+    procedure armar_vista;
+  public
+    { Public declarations }
+    function dame_sql : TStrings;
+    constructor Crear(AOwner : TComponent; x1,y1,x2,y2 : integer; const p_forma : string; p_sql : TStrings);overload;
+    constructor Crear(AOwner : TComponent; const p_forma : string; pSelect, pTabla, pWhere : string);overload;
+  end;
+
+var
+  frmConstructor_de_consultas: TfrmConstructor_de_consultas;
+
+implementation
+
+uses IBModulo, reglas_de_negocios, IBData;
+
+{$R *.DFM}
+
+constructor TfrmConstructor_de_consultas.Crear(AOwner : TComponent; const p_forma : string; pSelect, pTabla, pWhere : string);
+begin
+   inherited Create(AOwner);
+   forma  := p_forma;
+   select := pSelect;
+   tabla  := pTabla;
+   where  := pWhere;
+   //Filtra informacion de la forma con el usuario, para dar unicamente sus consultas
+   qyConstructor.Close;
+   qyConstructor.ParamByName('P_FORMA').AsString    := UpperCase(p_forma);
+   qyConstructor.ParamByName('P_USUARIO').AsInteger := reglas.dame_usuario;
+   qyConstructor.Open;
+   reglas.abrir_IBQuery(qyConstructor_Detalle);
+   //¿Borrar las consultas temporales?
+   reglas.abrir_IBTabla(dmIBData.TPreferencias);
+   dmIBData.TPreferencias.Filter := 'ID = 9';
+   if UpperCase(dmIBData.TPreferencias.FieldByName('VALOR').AsString) = 'SI' then
+   begin
+      qyBorrarTemporales.ParamByName('P_FORMA').AsString    := UpperCase(p_forma);
+      qyBorrarTemporales.ParamByName('P_USUARIO').AsInteger := reglas.dame_usuario;
+      qyBorrarTemporales.ExecSQL;
+      qyBorrarTemporales.Transaction.CommitRetaining;
+
+      reglas.abrir_IBQuery(qyConstructor);
+      reglas.abrir_IBQuery(qyConstructor_Detalle);
+   end;
+   //extraer consulta
+   qyVista.Close;
+   qyVista.SQL.Clear;
+   qyVista.SQL.Add('SELECT '+select);
+   qyVista.SQL.Add('FROM '+tabla);
+   qyVista.SQL.Add('WHERE '+where+'(ID = -3)');
+   qyVista.Open;
+   //extraer los nombres de los campos de la tabla en cuestion
+   qyVista.GetFieldNames(meCampos.Items);
+   //cargar consultas
+   qyAlmacenados.Close;
+   qyAlmacenados.ParamByName('P_FORMA').AsString    := UpperCase(p_forma);
+   qyAlmacenados.ParamByName('P_USUARIO').AsInteger := reglas.dame_usuario;
+   qyAlmacenados.Open;
+end;
+
+constructor TfrmConstructor_de_consultas.Crear(AOwner : TComponent; x1,y1,x2,y2 : integer; const p_forma : string; p_sql : TStrings);
+begin
+   Create(AOwner);
+   Left   := x1;
+   Top    := y1;
+   Width  := x2;
+   Height := y2;
+   forma  := p_forma;
+   //manejando el sql original que se paso por valor, para activarlo desde aqui;
+   sql    := p_sql;
+   //Filtra informacion de la forma con el usuario, para dar unicamente sus consultas
+   qyConstructor.Close;
+   qyConstructor.ParamByName('P_FORMA').AsString    := UpperCase(p_forma);
+   qyConstructor.ParamByName('P_USUARIO').AsInteger := reglas.dame_usuario;
+   qyConstructor.Open;
+   reglas.abrir_IBQuery(qyConstructor_Detalle);
+   //¿Borrar las consultas temporales?
+   reglas.abrir_IBTabla(dmIBData.TPreferencias);
+   dmIBData.TPreferencias.Filter := 'ID = 9';
+   if UpperCase(dmIBData.TPreferencias.FieldByName('VALOR').AsString) = 'SI' then
+   begin
+      qyBorrarTemporales.ParamByName('P_FORMA').AsString    := UpperCase(p_forma);
+      qyBorrarTemporales.ParamByName('P_USUARIO').AsInteger := reglas.dame_usuario;
+      qyBorrarTemporales.ExecSQL;
+      qyBorrarTemporales.Transaction.CommitRetaining;
+
+      reglas.abrir_IBQuery(qyConstructor);
+      reglas.abrir_IBQuery(qyConstructor_Detalle);
+   end;
+   //extraer consulta
+{   original := reglas.analizaSQL(TIBQuery(TCapturar.MasterSource.DataSet).SQL);
+   if (original) then
+   begin
+      consulta := reglas.analiza_sql(p_sql);
+      qyVista.Close;
+      qyVista.SQL.Clear;
+      qyVista.SQL.Add('SELECT *');
+      qyVista.SQL.Add('FROM '+consulta);
+      qyVista.SQL.Add('WHERE R_ID = -17');
+      qyVista.Open;
+   end
+   else
+      begin
+         select := reglas.analizaSELECT(TIBQuery(TCapturar.MasterSource.DataSet).SQL);
+         tabla  := reglas.analizaTABLA(TIBQuery(TCapturar.MasterSource.DataSet).SQL);
+         where  := reglas.analizaWHERE(TIBQuery(TCapturar.MasterSource.DataSet).SQL);
+         qyVista.Close;
+         qyVista.SQL.Clear;
+         qyVista.SQL.Add('SELECT '+select);
+         qyVista.SQL.Add('FROM '+tabla);
+         qyVista.SQL.Add('WHERE ID = -17');
+         qyVista.Open;
+      end;}
+
+
+   //extraer los nombres de los campos de la tabla en cuestion
+   qyVista.GetFieldNames(meCampos.Items);
+   //cargar consultas
+   qyAlmacenados.Close;
+   qyAlmacenados.ParamByName('P_FORMA').AsString    := UpperCase(p_forma);
+   qyAlmacenados.ParamByName('P_USUARIO').AsInteger := reglas.dame_usuario;
+   qyAlmacenados.Open;
+end;
+
+function TfrmConstructor_de_consultas.dame_sql : TStrings;
+begin
+   result := sql;
+end;
+
+procedure TfrmConstructor_de_consultas.armar_sql(p_sql : TStrings);
+var
+   primero : boolean;
+   valor   : string;
+begin
+   primero := False;
+   p_sql.Clear;
+   p_sql.Add('SELECT '+select);
+   p_sql.Add('FROM '+tabla);
+
+   dsConstructor_Detalle.DataSet.First;
+   while not(dsConstructor_Detalle.DataSet.Eof) do
+   begin
+      if not(primero) then
+      begin
+         valor := 'WHERE '+where+'( ( '+dsConstructor_Detalle.DataSet.FieldByName('BD_CAMPO').AsString+' '+dsConstructor_Detalle.DataSet.FieldByName('BD_SENTENCIA').AsString+' '+dsConstructor_Detalle.DataSet.FieldByName('BD_VALOR').AsString+' )';
+         p_sql.Add(valor);
+         primero := True;
+      end
+      else
+         begin
+            valor := dsConstructor_Detalle.DataSet.FieldByName('BD_LOGICA').AsString+' ( '+dsConstructor_Detalle.DataSet.FieldByName('BD_CAMPO').AsString+' '+dsConstructor_Detalle.DataSet.FieldByName('BD_SENTENCIA').AsString+' '+dsConstructor_Detalle.DataSet.FieldByName('BD_VALOR').AsString+' )';
+            p_sql.Add(valor);
+         end;
+      dsConstructor_Detalle.DataSet.Next;
+
+   end;
+   if primero then
+      p_sql.Add(' )');
+end;
+
+procedure TfrmConstructor_de_consultas.armar_vista;
+   function descripcion(value : string) : string;
+   var
+      i     : integer;
+      tmp   : string;
+      tmp2  : string;
+      esp   : boolean;
+   begin
+      tmp := '';
+      i := Pos('R_',value);
+      if i <> 0 then
+         tmp := copy(value,3,(length(value)-2))
+      else
+         tmp := value;
+      tmp  := LowerCase(tmp);
+      esp  := True;
+      tmp2 := '';
+
+      for i := 1 to length(tmp) do
+      begin
+         if tmp[i] = '_' then
+         begin
+            tmp2 := tmp2 + ' ';
+            esp  := True;
+         end
+         else
+            if esp then
+            begin
+               tmp2 := tmp2 + UpperCase(tmp[i]);
+               esp  := False;
+            end
+            else
+               tmp2 := tmp2 + tmp[i];
+      end;
+      Result := tmp2;
+   end;
+var
+   i       : integer;
+begin
+   armar_sql(qyVista.SQL);
+   //agregar columnas al grid
+   for i := 0 to (meCampos.Items.Count - 1) do
+   begin
+      dgVista.Columns[i].FieldName := meCampos.Items.Strings[i];
+      dgVista.Columns[i].Caption   := descripcion(meCampos.Items.Strings[i]);
+      dgVista.Columns[i].Sizing    := True;
+   end;
+end;
+
+procedure TfrmConstructor_de_consultas.dgDetalleKeyDown(Sender: TObject;
+  var Key: Word; Shift: TShiftState);
+begin
+  inherited;
+  if Key = 46 then //DELETE
+  begin
+     if not(dsConstructor_Detalle.DataSet.IsEmpty) then
+     begin
+        spDEL_CONSTRUCTOR_DETALLE.ParamByName('P_ID').AsInteger := dsConstructor_detalle.DataSet.FieldByName('ID').AsInteger;
+        spDEL_CONSTRUCTOR_DETALLE.ExecProc;
+        spDEL_CONSTRUCTOR_DETALLE.Transaction.CommitRetaining;
+        reglas.abrir_IBQuery(qyConstructor_Detalle);
+     end;
+  end;
+end;
+
+procedure TfrmConstructor_de_consultas.meSentenciasChange(Sender: TObject);
+begin
+  inherited;
+  if meSentencias.Text = 'ENTRE' then
+  begin
+     deValor.Visible    := FALSE;
+     deValorUno.Visible := TRUE;
+     deValorDos.Visible := TRUE;
+  end
+  else
+     begin
+        deValor.Visible    := TRUE;
+        deValorUno.Visible := FALSE;
+        deValorDos.Visible := FALSE;
+     end;
+end;
+
+procedure TfrmConstructor_de_consultas.deValorUnoExit(Sender: TObject);
+begin
+  inherited;
+  deValorDos.Date := deValorUno.Date;
+end;
+
+procedure TfrmConstructor_de_consultas.dgDetalleColumn5ButtonClick(
+  Sender: TObject; AbsoluteIndex: Integer);
+begin
+  inherited;
+  if not(dsConstructor_Detalle.DataSet.IsEmpty) then
+  begin
+     spDEL_CONSTRUCTOR_DETALLE.ParamByName('P_ID').AsInteger := dsConstructor_detalle.DataSet.FieldByName('ID').AsInteger;
+     spDEL_CONSTRUCTOR_DETALLE.ExecProc;
+     spDEL_CONSTRUCTOR_DETALLE.Transaction.CommitRetaining;
+     reglas.abrir_IBQuery(qyConstructor_Detalle);
+  end;
+end;
+
+procedure TfrmConstructor_de_consultas.qyAlmacenadosAfterOpen(
+  DataSet: TDataSet);
+begin
+  inherited;
+  reglas.refresh_IBQuery(qyAlmacenadosDetalle);
+end;
+
+procedure TfrmConstructor_de_consultas.ibAgregarClick(
+  Sender: TObject);
+   //analiza el campo valor del constructor
+   function valor(p_valor, p_sentencia, p_campo : string) : string;
+   var
+      res            : string;
+      entro          : boolean;
+      tipo_de_dato   : TFieldType;
+      es_tipo_cadena : boolean;
+   begin
+      entro          := False;
+      tipo_de_dato   := qyVista.FieldByName(p_Campo).DataType;
+      es_tipo_cadena := (tipo_de_dato = ftString) or (tipo_de_dato = ftDate) or (tipo_de_dato = ftDateTime) or (tipo_de_dato = ftTime);
+
+      if (p_sentencia = 'SEMEJANTE') then
+      begin
+         res   := '%'+p_valor+'%';
+         entro := True;
+      end
+      else
+      if (p_sentencia = 'SEMEJANTE AL INICIO') then
+      begin
+         res   := p_valor+'%';
+         entro := True;
+      end
+      else
+      if (p_sentencia = 'SEMEJANTE AL FINAL') then
+      begin
+         res   := '%'+p_valor;
+         entro := True;
+      end
+      else
+         res := p_valor;
+
+      if entro or es_tipo_cadena then
+         res := ''''+res+'''';
+
+      Result := res;
+   end;
+   //analiza el campo between
+   function valorDato : string;
+   var
+      resultado : string;
+      meses     : array[1..12] of string;
+   begin
+      meses[1]  := 'Jan';
+      meses[2]  := 'Feb';
+      meses[3]  := 'Mar';
+      meses[4]  := 'Apr';
+      meses[5]  := 'May';
+      meses[6]  := 'Jun';
+      meses[7]  := 'Jul';
+      meses[8]  := 'Aug';
+      meses[9]  := 'Sep';
+      meses[10] := 'Oct';
+      meses[11] := 'Nov';
+      meses[12] := 'Dec';
+
+      if meSentencias.Text = 'ENTRE' then
+      begin
+         resultado := '''' + FormatDateTime('dd-',deValorUno.Date)+meses[StrToInt(FormatDateTime('m',deValorUno.Date))]+FormatDateTime('-yyyy',deValorUno.Date)+ ''''+ ' AND '+''''+FormatDateTime('dd-',deValorDos.Date + 1)+meses[StrToInt(FormatDateTime('m',deValorDos.Date + 1))]+FormatDateTime('-yyyy',deValorDos.Date + 1)+'''';
+      end
+      else
+        resultado := valor(deValor.Text, meSentencias.Text, meCampos.Text);
+      Result := resultado;
+   end;
+   //analiza el campo logica del contructor
+   function logica(valor : string) : string;
+   var
+      res : string;
+   begin
+      if valor = 'Y' then
+         res := 'AND'
+      else
+      if valor = 'O' then
+         res := 'OR';
+      Result := res;
+   end;
+   //analiza el campo sentencia del constructor
+   function sentencia(valor : string) : string;
+   var
+      res : string;
+   begin
+      if valor = 'IGUAL' then
+         res := '='
+      else
+      if valor = 'MAYOR QUE' then
+         res := '>'
+      else
+      if valor = 'MENOR QUE' then
+         res := '<'
+      else
+      if valor = 'MAYOR O IGUAL QUE' then
+         res := '>='
+      else
+      if valor = 'MENOR O IGUAL QUE' then
+         res := '<='
+      else
+      if valor = 'DIFERENTE DE' then
+         res := '<>'
+      else
+      if (valor = 'SEMEJANTE') or (valor = 'SEMEJANTE AL INICIO') or (valor = 'SEMEJANTE AL FINAL') then
+         res := 'LIKE'
+      else
+      if valor = 'ENTRE' then
+         res := 'BETWEEN';
+      Result := res;
+   end;
+var
+   error : boolean;
+   id    : integer;
+   dato  : string;
+begin
+  error := False;
+  inherited;
+  if meCampos.Text = '' then
+  begin
+     ledCampos.Blinking := True;
+     error              := True;
+  end
+  else
+     begin
+        ledCampos.Blinking := False;
+        ledCampos.LedisOn  := False;
+     end;
+
+  if meSentencias.Text = '' then
+  begin
+     ledSentencias.Blinking := True;
+     error                  := True;
+  end
+  else
+     begin
+        ledSentencias.Blinking := False;
+        ledSentencias.LedisOn  := False;
+     end;
+
+  if deValor.Visible then
+  begin
+     if deValor.Text = '' then
+     begin
+        ledValor.Blinking := True;
+        error             := True;
+     end
+     else
+        begin
+           ledValor.Blinking := False;
+           ledValor.LedisOn  := False;
+        end;
+  end
+  else
+     begin
+        if (deValorUno.Text = '  /  /    ') or (deValorDos.Text = '  /  /    ') then
+        begin
+           ledValor.Blinking := True;
+           error             := True;
+        end
+        else
+           begin
+              ledValor.Blinking := False;
+              ledValor.LedisOn  := False;
+           end;
+     end;
+
+  if (meLogica.Text = 'NINGUNA') and not(dsConstructor_Detalle.DataSet.IsEmpty) then
+  begin
+     ledLogica.Blinking := True;
+     error              := True;
+  end
+  else
+     begin
+        ledLogica.Blinking := False;
+        ledLogica.LedisOn  := False;
+     end;
+
+  //agrega la sentencia si no hay error
+  if not(Error) then
+  begin
+     if meSentencias.Text = 'ENTRE' then
+        dato := deValorUno.Text + ' Y ' + deValorDos.Text
+     else
+        dato := deValor.Text;
+     //agrega el encabezado si es el primer registro
+     if dsConstructor.DataSet.IsEmpty then
+     begin
+        spADD_CONSTRUCTOR.ParamByName('P_FORMA').AsString    := UpperCase(forma);
+        spADD_CONSTRUCTOR.ParamByName('P_NOMBRE').AsString   := 'Temporal';
+        spADD_CONSTRUCTOR.ParamByName('P_CONSULTA').AsString := consulta;
+        spADD_CONSTRUCTOR.ParamByName('P_TEMPORAL').AsString := 'Si';
+        spADD_CONSTRUCTOR.ParamByName('P_USUARIO').AsInteger := reglas.dame_usuario;
+        spADD_CONSTRUCTOR.ExecProc;
+        spADD_CONSTRUCTOR.Transaction.CommitRetaining;
+        id := spADD_CONSTRUCTOR.ParamByName('R_ID').AsInteger;
+        reglas.abrir_IBQuery(qyConstructor);
+     end
+     else
+        id := dsConstructor.DataSet.FieldByName('ID').AsInteger;
+     spADD_CONSTRUCTOR_DETALLE.ParamByName('P_CONSTRUCTOR').AsInteger  := id;
+     spADD_CONSTRUCTOR_DETALLE.ParamByName('P_USR_CAMPO').AsString     := meCampos.Text;
+     spADD_CONSTRUCTOR_DETALLE.ParamByName('P_USR_SENTENCIA').AsString := meSentencias.Text;
+     spADD_CONSTRUCTOR_DETALLE.ParamByName('P_USR_LOGICA').AsString    := meLogica.Text;
+     spADD_CONSTRUCTOR_DETALLE.ParamByName('P_USR_VALOR').AsString     := dato;
+     spADD_CONSTRUCTOR_DETALLE.ParamByName('P_BD_CAMPO').AsString      := meCampos.Text;
+     spADD_CONSTRUCTOR_DETALLE.ParamByName('P_BD_SENTENCIA').AsString  := sentencia(meSentencias.Text);
+     spADD_CONSTRUCTOR_DETALLE.ParamByName('P_BD_LOGICA').AsString     := logica(meLogica.Text);
+     spADD_CONSTRUCTOR_DETALLE.ParamByName('P_BD_VALOR').AsString      := valorDato;
+     spADD_CONSTRUCTOR_DETALLE.ExecProc;
+     spADD_CONSTRUCTOR_DETALLE.Transaction.CommitRetaining;
+     reglas.abrir_IBQuery(qyConstructor_Detalle);
+  end;
+end;
+
+procedure TfrmConstructor_de_consultas.ibCancelarClick(
+  Sender: TObject);
+begin
+  inherited;
+{  sql.Clear;
+  sql.Add('SELECT *');
+  sql.Add('FROM '+consulta);}
+  Close;
+end;
+
+procedure TfrmConstructor_de_consultas.ibVistaClick(Sender: TObject);
+begin
+  inherited;
+  qyVista.Close;
+  armar_vista;
+  qyVista.Open;
+end;
+
+procedure TfrmConstructor_de_consultas.ibAplicarClick(Sender: TObject);
+begin
+  inherited;
+{  armar_sql(sql);
+  Close;}
+end;
+
+procedure TfrmConstructor_de_consultas.ibGuardarClick(
+  Sender: TObject);
+var
+   id_tmp : integer;
+begin
+  inherited;
+  idConstructor.Execute;
+  if idConstructor.Respuesta then
+  begin
+     id_tmp := dsConstructor.DataSet.FieldByName('ID').AsInteger;
+     spACTUALIZA_CONSTRUCTOR.ParamByName('P_ID').AsInteger    := id_tmp;
+     spACTUALIZA_CONSTRUCTOR.ParamByName('P_NOMBRE').AsString := idConstructor.Entrada;
+     spACTUALIZA_CONSTRUCTOR.ExecProc;
+     spACTUALIZA_CONSTRUCTOR.Transaction.CommitRetaining;
+     reglas.refresh_IBQuery(qyConstructor);
+     reglas.abrir_IBQuery_seek('ID',id_tmp,qyAlmacenados);
+     sbConsultas.Click;
+  end
+  else
+     begin
+        meConstructor.Mensaje1 := 'Consulta';
+        meConstructor.Mensaje2 := 'No guardada.';
+        meConstructor.Execute;
+     end;
+
+end;
+
+procedure TfrmConstructor_de_consultas.ibEliminarClick(
+  Sender: TObject);
+var
+   id_tmp : integer;
+begin
+  inherited;
+  if dlAlmacenadas.Text <> '' then
+  begin
+     id_tmp := dsAlmacenados.DataSet.FieldByName('ID').AsInteger;
+     spCONSTRUCTOR_ELIMINAR.ParamByName('P_ID').AsInteger := id_tmp;
+     spCONSTRUCTOR_ELIMINAR.ExecProc;
+     spCONSTRUCTOR_ELIMINAR.Transaction.CommitRetaining;
+     reglas.refresh_IBQuery(qyConstructor);
+     reglas.refresh_IBQuery(qyAlmacenados);
+     ibLimpiar.OnClick(Sender);
+  end;
+end;
+
+procedure TfrmConstructor_de_consultas.ibLimpiarClick(Sender: TObject);
+begin
+  inherited;
+  qyConstructor.Close;
+  qyConstructor.SQL.Clear;
+  qyConstructor.SQL.Add('SELECT *');
+  qyConstructor.SQL.Add('FROM CONSTRUCTOR');
+  qyConstructor.SQL.Add('WHERE (FORMA = :P_FORMA) AND (USUARIO = :P_USUARIO) AND (TEMPORAL = "Si")');
+  qyConstructor.ParamByName('P_FORMA').AsString    := UpperCase(forma);
+  qyConstructor.ParamByName('P_USUARIO').AsInteger := reglas.dame_usuario;
+  qyConstructor.Open;
+  ibVista.OnClick(Sender);
+end;
+
+procedure TfrmConstructor_de_consultas.Limpiar1Click(Sender: TObject);
+begin
+  inherited;
+  ibLimpiar.Click;
+end;
+
+procedure TfrmConstructor_de_consultas.NuevaPartida1Click(Sender: TObject);
+begin
+  inherited;
+  ibAgregar.Click;
+end;
+
+procedure TfrmConstructor_de_consultas.ModificarPartida1Click(
+  Sender: TObject);
+begin
+  inherited;
+  ibVista.Click;
+end;
+
+procedure TfrmConstructor_de_consultas.GuardarPartida1Click(
+  Sender: TObject);
+begin
+  inherited;
+  ibGuardar.Click;
+end;
+
+procedure TfrmConstructor_de_consultas.CancelarPartida1Click(
+  Sender: TObject);
+begin
+  inherited;
+  ibCancelar.Click;
+end;
+
+procedure TfrmConstructor_de_consultas.EliminarPartida1Click(
+  Sender: TObject);
+begin
+  inherited;
+  ibEliminar.Click;
+end;
+
+procedure TfrmConstructor_de_consultas.Pedidos1Click(Sender: TObject);
+begin
+  inherited;
+  ibAplicar.Click;
+end;
+
+procedure TfrmConstructor_de_consultas.sbConsultasClick(Sender: TObject);
+begin
+  inherited;
+  if dlAlmacenadas.Text <> '' then
+  begin
+     qyConstructor.Close;
+     qyConstructor.SQL.Clear;
+     qyConstructor.SQL.Add('SELECT *');
+     qyConstructor.SQL.Add('FROM CONSTRUCTOR');
+     qyConstructor.SQL.Add('WHERE ID = '+dsAlmacenados.DataSet.FieldByName('ID').AsString);
+     qyConstructor.Open;
+     ibVista.OnClick(Sender);
+  end;
+end;
+
+procedure TfrmConstructor_de_consultas.dlAlmacenadasChange(
+  Sender: TObject);
+begin
+  inherited;
+  sbConsultas.Click;
+end;
+
+end.

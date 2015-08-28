@@ -1,0 +1,42 @@
+program makeit;
+
+uses
+  Forms,
+  IBData in 'IBData.pas' {dmIBData: TDataModule},
+  IBModulo in 'IBModulo.pas' {dmIBModulo: TDataModule},
+  menu in 'menu.pas' {frmMenu},
+  reglas_de_negocios in 'reglas_de_negocios.pas',
+  clases in 'clases.pas',
+  autorizacion_cliente in 'autorizacion_cliente.pas' {frmAplicacionCliente},
+  ruta in 'Ruta.pas' {frRuta},
+  padre in 'padre.pas' {frmPadre},
+  hijo in 'hijo.pas' {frmHijo},
+  explorar in 'explorar.pas' {frmExplorar},
+  explorarMDI in 'explorarMDI.pas' {frmExplorarMDI},
+  capturar in 'capturar.pas' {frmCapturar},
+  capturarMDI in 'capturarMDI.pas' {frmCapturarMDI},
+  capturar_configuracion_menu in 'capturar_configuracion_menu.pas' {frmCapturar_configuracion_menu},
+  explorar_usuarios in 'explorar_usuarios.pas' {frmExplorar_Usuarios},
+  UfrmAcceso in 'UfrmAcceso.pas' {frmAcceso},
+  IBReportes in 'IBReportes.pas' {dmReportes: TDataModule},
+  elegir_empresa in 'elegir_empresa.pas' {frmElegir_Empresa},
+  acerca in 'acerca.pas' {frmAcerca},
+  UfrmColaboradores in 'UfrmColaboradores.pas' {frmColaboradores},
+  uMensajesError in 'uMensajesError.pas',
+  autorizacion in 'autorizacion.pas' {frmAutorizacion},
+  URecords in 'URecords.pas',
+  UTipos in 'UTipos.pas',
+  UfrmConstructor in 'UfrmConstructor.pas' {frmConstructor},
+  UfrmBuild in 'UfrmBuild.pas' {frmBuild},
+  UfrmScript in 'UfrmScript.pas' {frmScript},
+  UAWR in 'UAWR.pas';
+
+{$R *.RES}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TdmIBModulo, dmIBModulo);
+  Application.CreateForm(TdmIBData, dmIBData);
+  Application.CreateForm(TfrmMenu, frmMenu);
+  Application.Run;
+end.

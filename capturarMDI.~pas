@@ -1,0 +1,33 @@
+unit capturarMDI;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  capturar, IBStoredProc, IBTable, Mensajes, Db, IBCustomDataSet, IBQuery,
+  StdCtrls, Mask, DBCtrls,   fcImgBtn, jpeg, 
+  ExtCtrls,  ComCtrls, Buttons;
+
+type
+  TfrmCapturarMDI = class(TfrmCapturar)
+  private
+    { Private declarations }
+  protected
+    procedure borrar;override;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCapturarMDI: TfrmCapturarMDI;
+
+implementation
+
+{$R *.DFM}
+
+procedure TfrmCapturarMDI.borrar;
+begin
+   inherited borrar;
+end;
+
+end.

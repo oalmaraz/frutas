@@ -1,0 +1,9 @@
+inherited frmExplorarMDI: TfrmExplorarMDI
+  Caption = 'Explorar '
+  FormStyle = fsMDIChild
+  Position = poDefault
+  Visible = True
+  WindowState = wsMaximized
+  PixelsPerInch = 96
+  TextHeight = 13
+end

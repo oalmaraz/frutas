@@ -1,0 +1,38 @@
+unit explorar_usuarios;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  explorarMDI,    Menus,   Db,
+  IBCustomDataSet, IBQuery,  StdCtrls,
+     Mask, DBCtrls,
+     jpeg,  ExtCtrls,
+      ComCtrls, Buttons, Grids,
+  DBGrids;
+
+type
+  TfrmExplorar_Usuarios = class(TfrmExplorarMDI)
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmExplorar_Usuarios: TfrmExplorar_Usuarios;
+
+implementation
+
+{$R *.DFM}
+
+procedure TfrmExplorar_Usuarios.FormCreate(Sender: TObject);
+begin
+  inherited;
+  EXP_NVO     := true;
+  CAMPO_FECHA := 'R_FECHA';
+  FForma := 'frmCapturar_usuarios';
+end;
+
+end.

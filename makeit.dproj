@@ -1,0 +1,1733 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A915E577-7DB2-4D7A-B390-A921AA64A9EB}</ProjectGuid>
+        <MainSource>makeit.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>17.2</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <SanitizedProjectName>makeit</SanitizedProjectName>
+        <DCC_UnitSearchPath>C:\mkiteasy\exe;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;IBX;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_DebugInformation>1</DCC_DebugInformation>
+        <DCC_N>true</DCC_N>
+        <DCC_K>false</DCC_K>
+        <DCC_WriteableConstants>true</DCC_WriteableConstants>
+        <DCC_F>false</DCC_F>
+        <VerInfo_Locale>2058</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_S>false</DCC_S>
+        <DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
+        <DCC_UsePackage>Vcl50;Vclx50;VclSmp50;Vcldb50;vclado50;ibevnt50;Vclbde50;vcldbx50;qrpt50;TeeUI50;TeeDB50;Tee50;Dss50;TeeQR50;VCLIB50;Vclmid50;vclie50;Inetdb50;Inet50;NMFast50;webmid50;dclocx50;dclaxserver50;FirstClass2000_vcl5;Barcode50;DBDB50;dxForumLibD5;DBCQ50;dxEdtrD5;dxcomnD5;EQTLD5;ECQDBCD5;EQDBTLD5;EQGridD5;dxGrEdD5;dxExELD5;dxELibD5;dxPSCored5;dxPSLnksD5;dxPSTLLnkD5;dxPSTeeChartD5;dxPSDBTeeChartD5;dxPSdxDBTLLnkD5;dxPSdxDBCtrlLnkd5;dxPSdxDBGrLnkD5;FlatStyle_D5;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_E>false</DCC_E>
+        <DCC_ExeOutput>C:\mkiteasy\exe</DCC_ExeOutput>
+        <DCC_Alignment>1</DCC_Alignment>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_DcuOutput>C:\mkiteasy\exe</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Icon_MainIcon>makeit_Icon.ico</Icon_MainIcon>
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>makeit_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_Optimize>false</DCC_Optimize>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="IBData.pas">
+            <Form>dmIBData</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="IBModulo.pas">
+            <Form>dmIBModulo</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="menu.pas">
+            <Form>frmMenu</Form>
+        </DCCReference>
+        <DCCReference Include="reglas_de_negocios.pas"/>
+        <DCCReference Include="clases.pas"/>
+        <DCCReference Include="autorizacion_cliente.pas">
+            <Form>frmAplicacionCliente</Form>
+        </DCCReference>
+        <DCCReference Include="Ruta.pas">
+            <Form>frRuta</Form>
+        </DCCReference>
+        <DCCReference Include="padre.pas">
+            <Form>frmPadre</Form>
+        </DCCReference>
+        <DCCReference Include="hijo.pas">
+            <Form>frmHijo</Form>
+        </DCCReference>
+        <DCCReference Include="explorar.pas">
+            <Form>frmExplorar</Form>
+        </DCCReference>
+        <DCCReference Include="explorarMDI.pas">
+            <Form>frmExplorarMDI</Form>
+        </DCCReference>
+        <DCCReference Include="capturar.pas">
+            <Form>frmCapturar</Form>
+        </DCCReference>
+        <DCCReference Include="capturarMDI.pas">
+            <Form>frmCapturarMDI</Form>
+        </DCCReference>
+        <DCCReference Include="capturar_configuracion_menu.pas">
+            <Form>frmCapturar_configuracion_menu</Form>
+        </DCCReference>
+        <DCCReference Include="explorar_usuarios.pas">
+            <Form>frmExplorar_Usuarios</Form>
+        </DCCReference>
+        <DCCReference Include="UfrmAcceso.pas">
+            <Form>frmAcceso</Form>
+        </DCCReference>
+        <DCCReference Include="IBReportes.pas">
+            <Form>dmReportes</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="elegir_empresa.pas">
+            <Form>frmElegir_Empresa</Form>
+        </DCCReference>
+        <DCCReference Include="acerca.pas">
+            <Form>frmAcerca</Form>
+        </DCCReference>
+        <DCCReference Include="UfrmColaboradores.pas">
+            <Form>frmColaboradores</Form>
+        </DCCReference>
+        <DCCReference Include="uMensajesError.pas"/>
+        <DCCReference Include="autorizacion.pas">
+            <Form>frmAutorizacion</Form>
+        </DCCReference>
+        <DCCReference Include="URecords.pas"/>
+        <DCCReference Include="UTipos.pas"/>
+        <DCCReference Include="UfrmConstructor.pas">
+            <Form>frmConstructor</Form>
+        </DCCReference>
+        <DCCReference Include="UfrmBuild.pas">
+            <Form>frmBuild</Form>
+        </DCCReference>
+        <DCCReference Include="UfrmScript.pas">
+            <Form>frmScript</Form>
+        </DCCReference>
+        <DCCReference Include="UAWR.pas"/>
+        <DCCReference Include="CAPTURA.pas">
+            <Form>frmCaptura</Form>
+        </DCCReference>
+        <DCCReference Include="USQLAnaliza.pas"/>
+        <DCCReference Include="mConfig\capturar_botones.pas">
+            <Form>frmCapturar_botones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_condiciones_comerciales.pas">
+            <Form>frmCapturar_condiciones_comerciales</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_empresa.pas">
+            <Form>frmCapturar_empresa</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_entidad_geografica.pas">
+            <Form>frmCapturar_entidad_geografica</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_monedas.pas">
+            <Form>frmCapturar_monedas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_tipo_de_ctas.pas">
+            <Form>frmCapturar_tipo_de_ctas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_condiciones_comerciales.pas">
+            <Form>frmExplorar_condiciones_comerciales</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_monedas.pas">
+            <Form>frmExplorar_monedas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_tipo_de_ctas.pas">
+            <Form>frmExplorar_tipo_de_ctas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmCFD.pas">
+            <Form>frmCFD</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmValor.pas">
+            <Form>frmValor</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mConfig\capturar_formas_estatus.pas">
+            <Form>frmCapturar_Formas_Estatus</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mConfig\capturar_iconos_menu.pas">
+            <Form>frmCapturar_iconos_menu</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mConfig\capturar_relacion_botones.pas">
+            <Form>frmCapturar_relacion_botones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mConfig\capturar_tipos_de_formas.pas">
+            <Form>frmCapturar_tipos_de_formas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mConfig\explorar_botones.pas">
+            <Form>frmExplorar_botones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mConfig\explorar_relacion_botones.pas">
+            <Form>frmExplorar_relacion_botones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mConfig\explorar_tipos_de_formas.pas">
+            <Form>frmExplorar_tipos_de_formas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mConfig\mantenimientoDiccionario.pas">
+            <Form>frmMantenimientoDiccionario</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mConfig\UfrmDiccionario.pas">
+            <Form>frmDiccionario</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mConfig\UfrmEstatusDestinatarios.pas">
+            <Form>frmEstatusDestinatarios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mConfig\UfrmFormasEstatus.pas">
+            <Form>frmFormasEstatus</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mConfig\UfrmSeleccionarUsuario.pas">
+            <Form>frmSeleccionarUsuario</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_mensajes.pas">
+            <Form>frmCapturar_mensajes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_mensajes.pas">
+            <Form>frmExplorar_mensajes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_zonas.pas">
+            <Form>frmExplorar_zonas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmCostosPI.pas">
+            <Form>frmCostosPI</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\USeleccionarConceptosGastos.pas">
+            <Form>frmSeleccionarConceptosGastos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_tentrega.pas">
+            <Form>frmCapturar_tentrega</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_tentrega.pas">
+            <Form>frmExplorar_tentrega</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_zonas.pas">
+            <Form>frmCapturar_zonas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmSeleccionarTEntrega.pas">
+            <Form>frmSeleccionarTEntrega</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_presentaciones.pas">
+            <Form>frmCapturar_presentaciones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_presentaciones.pas">
+            <Form>frmExplorar_presentaciones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_grupos_colores.pas">
+            <Form>frmCapturar_grupos_colores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_colores.pas">
+            <Form>frmCapturar_colores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_colores.pas">
+            <Form>frmExplorar_Colores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_grupos_colores.pas">
+            <Form>frmExplorar_grupos_colores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmMedidasGrupos.pas">
+            <Form>frmMedidasGrupos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmMedidas.pas">
+            <Form>frmMedidas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UdmMedidas.pas"/>
+        <DCCReference Include="mcatalogos\UTypeMedidas.pas"/>
+        <DCCReference Include="mcatalogos\capturar_conceptos_gastos.pas">
+            <Form>frmCapturar_Conceptos_Gastos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_conceptos_gastos.pas">
+            <Form>frmExplorar_Conceptos_Gastos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_conceptos_descuentos_nc.pas">
+            <Form>frmExplorar_Conceptos_Descuentos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_conceptos_descuentos.pas">
+            <Form>frmCapturar_conceptos_descuentos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_rutas.pas">
+            <Form>frmExplorar_rutas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_rutas.pas">
+            <Form>frmCapturar_rutas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\seleccionar_extensiones.pas">
+            <Form>frmSeleccionar_Extensiones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\controladorImpresora.pas">
+            <Form>frmControladorImpresoras</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_nombre_lista_precios.pas">
+            <Form>frmCapturar_nombre_lista_precios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\PRN_0023_Lista_Precios.pas">
+            <Form>frmPRN_0023_Lista_Precios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_nombre_lista_precios.pas">
+            <Form>frmExplorar_nombre_lista_precios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_mis_listas_de_precios.pas">
+            <Form>frmCapturar_mis_listas_de_precios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_lista_precios.pas">
+            <Form>frmExplorar_lista_precios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_lista_precios.pas">
+            <Form>frmCapturar_lista_precios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\seleccionar_almacen.pas">
+            <Form>frmSeleccionar_Almacen</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\teclado.pas">
+            <Form>frmTeclado</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\seleccionar_material.pas">
+            <Form>frmSeleccionar_material</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_preconfiguracion_touchScreen.pas">
+            <Form>frmExplorar_preconfiguracion_touchScreen</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_preconfiguracion_touchscreen.pas">
+            <Form>frmCapturar_preconfiguracion_touchScreen</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\seleccionar_material_grupos.pas">
+            <Form>frmSeleccionar_material_grupos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_grupos_materiales.pas">
+            <Form>frmCapturar_grupos_materiales</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_grupos_materiales.pas">
+            <Form>frmExplorar_Grupos_Materiales</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_calidades.pas">
+            <Form>frmCapturar_calidades</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_calidades.pas">
+            <Form>frmExplorar_Calidades</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_cajas.pas">
+            <Form>frmCapturar_cajas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_cajas.pas">
+            <Form>frmExplorar_cajas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmSeleccionarExtension.pas">
+            <Form>frmSeleccionarExtension</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_materiales.pas">
+            <Form>frmCapturar_materiales</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\lineas.pas">
+            <Form>frmLineas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\generar.pas">
+            <Form>frmGenerar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmMaterial_Costos.pas">
+            <Form>frmMaterial_Costos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmSeleccionarCGastos.pas">
+            <Form>frmSeleccionarCGastos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmMMP.pas">
+            <Form>frmMMP</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UdmAutorizar.pas"/>
+        <DCCReference Include="mcatalogos\UTypeAutorizar.pas"/>
+        <DCCReference Include="mcatalogos\UfrmAutorizar.pas">
+            <Form>frmAutorizar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmSeleccionarTarea.pas">
+            <Form>frmSeleccionarTarea</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmSeleccionarProveedor.pas">
+            <Form>frmSeleccionarProveedor</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\seleccionar_unidades.pas">
+            <Form>frmSeleccionar_Unidades</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_materiales.pas">
+            <Form>frmExplorar_materiales</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_unidades.pas">
+            <Form>frmExplorar_unidades</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_unidades.pas">
+            <Form>frmCapturar_unidades</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmSerie.pas">
+            <Form>frmSerie</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmInvSeries.pas">
+            <Form>frmInvSeries</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmMaterialExistencias.pas">
+            <Form>frmMaterialExistencias</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\Ulineas.pas">
+            <Form>frmLineasSub</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UdmAltaRapidaMateriales.pas"/>
+        <DCCReference Include="mcatalogos\UdmHorizontal.pas"/>
+        <DCCReference Include="mcatalogos\UfrmLineas.pas">
+            <Form>frmCapturar_Lineas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_almacenes.pas">
+            <Form>frmCapturar_almacenes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UdmLineas.pas"/>
+        <DCCReference Include="mcatalogos\UfrmFrameMaterial.pas">
+            <Form>MarcoMateriales</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UTypeLineas.pas"/>
+        <DCCReference Include="mcatalogos\UfrmSeleccionarMaterialTodos.pas">
+            <Form>frmSeleccionarMaterialTodos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmAltaRapidaMateriales.pas">
+            <Form>frmAltaRapidaMateriales</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmHorizontal.pas">
+            <Form>frmHorizontal</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmSeleccionarMaterialCompras.pas">
+            <Form>frmSeleccionarMaterialCompras</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmSeleccionarMaterial.pas">
+            <Form>frmSeleccionarMaterial</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_almacenes.pas">
+            <Form>frmExplorar_almacenes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_promociones.pas">
+            <Form>frmCapturar_promociones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_departamentos.pas">
+            <Form>frmCapturar_departamentos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_financiamientos.pas">
+            <Form>frmExplorar_financiamientos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_financiamientos.pas">
+            <Form>frmCapturar_financiamientos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_promociones.pas">
+            <Form>frmExplorar_promociones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_departamentos.pas">
+            <Form>frmExplorar_departamentos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_transportistas.pas">
+            <Form>frmExplorar_transportistas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_transportistas.pas">
+            <Form>frmCapturar_transportistas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_remitentes.pas">
+            <Form>frmExplorar_remitentes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_remitentes.pas">
+            <Form>frmCapturar_remitentes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_vendedores.pas">
+            <Form>frmCapturar_vendedores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\seleccionar_zonas.pas">
+            <Form>frmSeleccionar_zonas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_vendedores.pas">
+            <Form>frmExplorar_vendedores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_compradores.pas">
+            <Form>frmCapturar_compradores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\seleccionar_zona_comprador.pas">
+            <Form>frmSeleccionar_zona_comprador</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_compradores.pas">
+            <Form>frmExplorar_compradores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_proveedores.pas">
+            <Form>frmCapturar_proveedores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\seleccionar_bancos_proveedores.pas">
+            <Form>frmSeleccionar_Bancos_Proveedores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_proveedores.pas">
+            <Form>frmExplorar_proveedores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_bancos.pas">
+            <Form>frmCapturar_bancos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmTabulador.pas">
+            <Form>frmTabulador</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_grupos_tabulador.pas">
+            <Form>frmExplorar_grupos_tabulador</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_extensiones.pas">
+            <Form>frmExplorar_extensiones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_clientes.pas">
+            <Form>frmCapturar_clientes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_clientes.pas">
+            <Form>frmExplorar_clientes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmSeleccionarCliente.pas">
+            <Form>frmSeleccionarCliente</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmSeleccionarCDescuento.pas">
+            <Form>frmSeleccionarCDescuento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmSeleccionarRemitente.pas">
+            <Form>frmSeleccionarRemitente</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_usuarios.pas">
+            <Form>frmCapturar_usuarios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_seguridad.pas">
+            <Form>frmCapturar_seguridad</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_activar_botones.pas">
+            <Form>frmCapturar_activar_botones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_base_sujetos.pas">
+            <Form>frmCapturar_base_sujetos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UfrmImagen.pas">
+            <Form>frmImagen</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\seleccionar_bancos.pas">
+            <Form>frmSeleccionar_bancos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\seleccionar.pas">
+            <Form>frmSeleccionar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_grupos_tabulador.pas">
+            <Form>frmCapturar_grupos_tabulador</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_tabuladores.pas">
+            <Form>frmCapturar_tabuladores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_tabuladores.pas">
+            <Form>frmExplorar_tabuladores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\capturar_clasificaciones.pas">
+            <Form>frmCapturar_clasificaciones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_clasificaciones.pas">
+            <Form>frmExplorar_clasificaciones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_tabulador_nlp.pas">
+            <Form>frmExplorar_tabulador_nlp</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\explorar_bancos.pas">
+            <Form>frmExplorar_bancos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mcatalogos\UTypeHorizontal.pas"/>
+        <DCCReference Include="mcatalogos\UTypeAltaRapidaMateriales.pas"/>
+        <DCCReference Include="mEntradas\capturar_desempaques.pas"/>
+        <DCCReference Include="mEntradas\capturar_ordenes_de_compras.pas">
+            <Form>frmCapturar_Ordenes_de_Compras</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\capturar_procesos.pas">
+            <Form>frmCapturar_procesos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\capturar_requisicion_cotizaciones.pas">
+            <Form>frmCapturar_requisicion_cotizaciones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\capturar_requisiciones.pas">
+            <Form>frmCapturar_requisiciones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\cotizaciones_en_ocompras.pas">
+            <Form>frmCotizaciones_en_ocompras</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\explorar_desempaques.pas">
+            <Form>frmExplorar_desempaques</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\explorar_ordenes_de_compras.pas">
+            <Form>frmExplorar_ordenes_de_compras</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\explorar_requisiciones.pas">
+            <Form>frmExplorar_requisiciones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\explorar_requisiciones_cot.pas">
+            <Form>frmExplorar_requisicion_cotizaciones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\PRN_0025.pas">
+            <Form>frmPRN_0025</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\seleccionar_proveedor.pas">
+            <Form>frmSeleccionar_proveedor</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\U0002_PR.pas">
+            <Form>PR_0002</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\UfrmFolio.pas">
+            <Form>frmFolio</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\UfrmSeleccionarRequisicion.pas">
+            <Form>frmSeleccionarRequisicion</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\UPRN_0039.pas">
+            <Form>PRN_0039</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\UPRN_0050.pas">
+            <Form>PRN_0050</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\capturar_pedimento_importacion.pas">
+            <Form>frmCapturar_Pedimento_Importacion</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\UPRN_0040.pas">
+            <Form>PRN_0040</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\explorar_pedimento_importacion.pas">
+            <Form>frmExplorar_pedimento_importacion</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\UfrmSeleccionarNE.pas">
+            <Form>frmSeleccionarNE</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\explorar_notas_de_entrada.pas">
+            <Form>frmExplorar_notas_de_entrada</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\U0001_PR.pas">
+            <Form>PR_0001</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mEntradas\PRN_0032.pas">
+            <Form>frmPRN_0032</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="capturar_entradas.pas"/>
+        <DCCReference Include="mEntradas\capturarMDIEstatus.pas">
+            <Form>frmCapturarMDIEstatus</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\explorar_cotizaciones.pas">
+            <Form>frmExplorar_cotizaciones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\capturar_cotizaciones.pas">
+            <Form>frmCapturar_cotizaciones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\explorar_cotizaciones_estatus.pas"/>
+        <DCCReference Include="mSalidas\UfrmTLEstatus.pas">
+            <Form>frmTLEstatus</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\seleccionar_cliente.pas">
+            <Form>frmSeleccionar_cliente</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmPresupuesto.pas">
+            <Form>frmPresupuesto</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UPRN_0036.pas">
+            <Form>PRN_0036</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmRTF.pas">
+            <Form>frmRTF</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\capturar_pedidos.pas">
+            <Form>frmCapturar_pedidos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\explorar_pedidos.pas"/>
+        <DCCReference Include="mSalidas\seleccionar_cotizaciones.pas">
+            <Form>frmSeleccionar_cotizaciones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\seleccionar_extension.pas">
+            <Form>frmSeleccionar_extension</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\ver_cotizaciones_en_pedidos.pas">
+            <Form>frmVer_Cotizaciones_en_Pedidos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0026.pas">
+            <Form>frmPRN_0026</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0027.pas">
+            <Form>frmPRN_0027</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0030.pas">
+            <Form>frmPRN_0030</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\URPT_PEDIDO_PARTIDAS.pas">
+            <Form>RPT_PEDIDO_PARTIDAS</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\ufrmSeleccionarPresentaciones.pas">
+            <Form>frmSeleccionarPresentaciones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmFTP.pas">
+            <Form>frmFTP</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmInsuficienciasPedido.pas">
+            <Form>frmInsuficienciasPedido</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmKit.pas">
+            <Form>frmKit</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmSeleccionarCotizacion.pas">
+            <Form>frmSeleccionarCotizacion</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\capturar_facturas.pas">
+            <Form>frmCapturar_facturas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\explorar_facturas.pas">
+            <Form>frmExplorar_Facturas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\seleccionar_pedidos.pas">
+            <Form>frmSeleccionar_pedidos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmSeleccionarPedidoParaFacturas.pas">
+            <Form>frmSeleccionarPedidoParaFacturas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmInsuficienciasFactura.pas">
+            <Form>frmInsuficienciasFactura</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmFacturasGastos.pas">
+            <Form>frmFacturasGastos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmElegirCFF.pas">
+            <Form>frmCFF</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0003_FACTURAR.pas">
+            <Form>frmPRN_0003</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0003_FACTURAR_TXT.pas">
+            <Form>frmPRN_0003_TXT</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UdmNCreditoAlta.pas">
+            <Form>dmNCreditoAlta</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmNCreditoAlta.pas">
+            <Form>frmNCreditoAlta</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0012_Facturacion.pas">
+            <Form>frmPRN_0012</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\ver_pedidos_en_facturas.pas">
+            <Form>frmVer_Pedidos_en_Facturas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\frmBusqueda.pas">
+            <Form>fmBusquedas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\frmConsultaVentasAnteriores.pas">
+            <Form>fmConsultaVentasAnteriores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmGuiaEmbarque.pas">
+            <Form>frmGuiaDeEmbarque</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0028.pas">
+            <Form>frmPRN_0028</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UPRN_0041.pas">
+            <Form>PRN_0041</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UPRN_0042.pas">
+            <Form>PRN_0042</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\capturar_despachador.pas">
+            <Form>frmCapturar_Despachador</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\explorar_despachador.pas">
+            <Form>frmExplorar_Despachador</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmDespachador.pas">
+            <Form>frmDespachador</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmCambioPrecio.pas">
+            <Form>frmCambioPrecio</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\explorar_surtimiento.pas">
+            <Form>frmExplorar_surtimiento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmSurtimiento.pas">
+            <Form>frmSurtimiento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmSurtimientoUsuarioDe.pas">
+            <Form>frmSurtimientoUsuarioDe</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0029_MI.pas">
+            <Form>frmPRN_0029</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmDespachadorSurtimiento.pas">
+            <Form>frmDespachadorSurtimiento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmInsuficienciasSurtimiento.pas">
+            <Form>frmInsuficienciasSurtimiento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmSurtimientoListaEmpaque.pas">
+            <Form>frmSurtimientoListaEmpaque</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmCarteleraAlmacen.pas">
+            <Form>frmCarteleraAlmacen</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0027_A.pas">
+            <Form>frmPRN_0027_A</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UTypeNCreditoAlta.pas"/>
+        <DCCReference Include="mSalidas\explorar_punto_de_ventas.pas">
+            <Form>frmExplorar_punto_de_ventas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\capturar_punto_de_ventas.pas">
+            <Form>frmCapturar_punto_de_ventas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\explorar_punto_de_ventas_reporteador.pas">
+            <Form>frmExplorar_punto_de_ventas_rep</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\capturar_punto_de_ventas_pagos.pas">
+            <Form>frmCapturar_punto_de_ventas_pagos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmInfo.pas">
+            <Form>frmInfo</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0008_Ventas.pas">
+            <Form>frmPRN_0008</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\ver_detalle_venta.pas">
+            <Form>frmVerDetalleHijo</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmValesDetalle.pas">
+            <Form>frmValesDetalle</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0034.pas">
+            <Form>frmPRN_0034</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmMonederoReg.pas">
+            <Form>frmMonederoReg</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UMarcoTNumerico.pas">
+            <Form>MarcoTNumerico</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmPOSEfectivo.pas">
+            <Form>frmPOSEfectivo</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\teclado_numerico.pas">
+            <Form>frmTeclado_Numerico</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0004_NOTA_VENTA_TXT.pas">
+            <Form>frmPRN_0004_TXT</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0004_NOTA_VENTA.pas">
+            <Form>frmPRN_0004</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_CORTE_CAJAS_PV.pas">
+            <Form>frmPRN_CORTE_CAJA_PV</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\RPT_FICHA_DEPOSITO.pas">
+            <Form>frmRPT_FICHA_DEPOSITO</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\RPT_CORTE_CAJAS_PV.pas">
+            <Form>frmRPT_CORTE_CAJAS_PV</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\RPT_CORTE_CAJAS_DET_PV.pas">
+            <Form>frmRPT_CORTE_CAJAS_DET_PV</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\RPT_CORTE_CAJAS_CC_PV.pas">
+            <Form>frmRPT_CORTE_CAJAS_CC_PV</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\RPT_CORTE_CAJAS_CC_DET_PV.pas">
+            <Form>frmRPT_CORTE_CAJAS_CC_DET_PV</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\RPT_RESUMEN_ALMACENES.pas">
+            <Form>frmRPT_RESUMEN_ALMACENES</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\RPT_ENTRADAS_SALIDAS.pas">
+            <Form>frmRPT_ENTRADAS_SALIDAS</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\RPT_CORTE_CAJAS_CAJAS.pas">
+            <Form>frmRPT_CORTE_CAJAS_CAJAS</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_CAJAS_DEVOLUCIONES.pas">
+            <Form>frmPRN_CAJAS_DEVOLUCIONES</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmPOSPagos.pas">
+            <Form>frmPOSPagos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmPOSTC.pas">
+            <Form>frmPOSTC</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmPOSVales.pas">
+            <Form>frmPOSVales</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\capturar_punto_de_venta_cancelacion.pas">
+            <Form>frmCapturar_Punto_de_Venta_Cancelacion</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UPRN_0037_PVTAS.pas">
+            <Form>PRN_0037</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\capturar_devoluciones.pas">
+            <Form>frmCapturar_Devoluciones</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmConsultaPrecios.pas">
+            <Form>frmConsultaPrecios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\AltaRapidaCliente.pas">
+            <Form>frmAltaRapidaCliente</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmBasculaPuerto.pas">
+            <Form>frmBasculaPuerto</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmSeleccionarPedidoParaPOS.pas">
+            <Form>frmSeleccionarPedidoParaPOS</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmColectas.pas">
+            <Form>frmColectas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\PRN_0006_Colectas.pas">
+            <Form>frmPRN_0006</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mSalidas\UfrmF12Imp.pas">
+            <Form>frmF12Imp</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\capturar_cxp_movimientos.pas">
+            <Form>frmCapturar_cxp_movimientos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\capturar_cxp_pagos.pas">
+            <Form>frmCapturar_CXP_FormasDePago</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\PRN_0017_ESTADOS_CXP.pas">
+            <Form>frmPRN_0017</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\PRN_0035.pas">
+            <Form>frmPRN_0035</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\PRN_CORTE_CAJAS_CXP.pas">
+            <Form>frmPRN_CORTE_CAJAS_CXP</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\RPT_CORTE_CAJAS_CXP.pas">
+            <Form>frmRPT_CORTE_CAJAS_CXP</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\RPT_CORTE_CAJAS_CXP_CC.pas">
+            <Form>frmRPT_CORTE_CAJAS_CXP_CC</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\RPT_CORTE_CAJAS_CXP_CC_DET.pas">
+            <Form>frmRPT_CORTE_CAJAS_CXP_CC_DET</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\RPT_CORTE_CAJAS_CXP_DET.pas">
+            <Form>frmRPT_CORTE_CAJAS_CXP_DET</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UCXP_PagosD.pas">
+            <Form>frmCXP_PagosD</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UdmCuentasPorPagar.pas">
+            <Form>dmCuentasPorPagar</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UdmDetalleDeLaCompra.pas">
+            <Form>dmDetalleDeLaCompra</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UdmDocumentoNCargoAfectada.pas">
+            <Form>dmDocumentoNCargoAfectada</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UdmDocumentoNCargoSAfectar.pas">
+            <Form>dmDocumentoNCargoSAfectar</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UdmDocumentoNCreditoAfectada.pas">
+            <Form>dmDocumentoNCreditoAfectada</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UdmDocumentoNCreditoSAfectar.pas">
+            <Form>dmDocumentoNCreditoSAfectar</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UdmDocumentoPagosCXP.pas">
+            <Form>dmDocumentoPagosCXP</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UfrmCuentasPorPagar.pas">
+            <Form>frmCuentasPorPagar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UfrmDetalleDeLaCompra.pas">
+            <Form>frmDetalleDeLaCompra</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UfrmDocumentoNCargoAfectada.pas">
+            <Form>frmDocumentoNCargoAfectada</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UfrmDocumentoNCargoSAfectar.pas">
+            <Form>frmDocumentoNCargoSAfectar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UfrmDocumentoNCreditoAfectada.pas">
+            <Form>frmDocumentoNCreditoAfectada</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UfrmDocumentoNCreditoSAfectar.pas">
+            <Form>frmDocumentoNCreditoSAfectar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UfrmDocumentoPagosCXP.pas">
+            <Form>frmDocumentoPagosCXP</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UfrmSeleccionarProveedor_.pas">
+            <Form>frmSeleccionarProveedor_</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\Uprn_0003.pas">
+            <Form>PRN_0003</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="mFinanzas\UTypeDetalleDeLaCompra.pas"/>
+        <DCCReference Include="mFinanzas\UTypeDocumentoNCargoAfectada.pas"/>
+        <DCCReference Include="mFinanzas\UTypeDocumentoNCargoSAfectar.pas"/>
+        <DCCReference Include="mFinanzas\UTypeDocumentoNCreditoAfectada.pas"/>
+        <DCCReference Include="mFinanzas\UTypeDocumentoNCreditoSAfectar.pas"/>
+        <DCCReference Include="mFinanzas\UTypeDocumentoPagosCXP.pas"/>
+        <DCCReference Include="UTypeCuentasPorPagar.pas"/>
+        <DCCReference Include="mFinanzas\Uprn_0004.pas">
+            <Form>PRN_0004</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">makeit.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k220.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp220.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <Deployment Version="1">
+                <DeployFile LocalName="exe\makeit.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>makeit.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeX86File">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\x86</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements">
+                    <Platform Name="OSX32">
+                        <RemoteDir>../</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSEntitlements">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>../</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>../</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+            </Deployment>
+            <ModelSupport>False</ModelSupport>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>
